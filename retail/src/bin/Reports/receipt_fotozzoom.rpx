@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="3810" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="ReportHeader" Name="ReportHeader1" Height="285" BackColor="16777215">
+      <Control Type="AR.Subreport" Name="srptHeader" Left="0" Top="0" Width="3780" Height="360" ReportName="SubReport1" />
+    </Section>
+    <Section Type="PageHeader" Name="PageHeader1" Height="810" BackColor="16777215">
+      <Control Type="AR.Field" Name="TextBox4" Left="2610" Top="90" Width="720" Height="270" Text="CashBill:" Style="ddo-char-set: 0; text-align: left; font-weight: normal; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Field" Name="txtTime" Left="0" Top="90" Width="1710" Height="270" Text="21 Nov 2009 - 10:58" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Field" Name="txtReceiptID" Left="3240" Top="90" Width="540" Height="270" Text="123456789" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Field" Name="txtUser" Left="1710" Top="90" Width="900" Height="270" Text="txtUser" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Line" Name="Line1" X1="0" Y1="0" X2="3780" Y2="0" LineStyle="2" />
+      <Control Type="AR.Field" Name="TextBox10" Left="0" Top="540" Width="1710" Height="270" Text="Code &amp; Desc" Style="text-decoration: underline; ddo-char-set: 0; text-align: left; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Field" Name="TextBox11" Left="1800" Top="540" Width="360" Height="270" Text="Qty" Style="text-decoration: underline; ddo-char-set: 0; text-align: right; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Field" Name="TextBox9" Left="2160" Top="540" Width="810" Height="270" Text="Price" Style="text-decoration: underline; ddo-char-set: 0; text-align: right; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Field" Name="TextBox3" Left="2970" Top="540" Width="810" Height="270" Text="Amt" Style="text-decoration: underline; ddo-char-set: 0; text-align: right; font-size: 8.25pt; font-family: Arial; " />
+      <Control Type="AR.Line" Name="Line6" X1="0" Y1="450" X2="3780" Y2="450" LineStyle="2" />
+    </Section>
+    <Section Type="Detail" Name="Detail1" Height="495" BackColor="16777215">
+      <Control Type="AR.Field" Name="txtQty" Left="1800" Top="270" Width="360" Height="270" Text="999" OutputFormat="#,##0" Style="ddo-char-set: 0; text-align: right; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtPrice" Left="2160" Top="270" Width="810" Height="270" Text="0.00" OutputFormat="#,##0.00;(#,##0.00)" Style="ddo-char-set: 0; text-align: right; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtAmount" Left="2970" Top="270" Width="810" Height="270" Text="900,000.00" OutputFormat="#,##0.00" Style="ddo-char-set: 0; text-align: right; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtDesc" DataField="name" Left="0" Top="0" Width="3780" Height="270" Text="txtDesc" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtCode" DataField="item_code" Left="0" Top="270" Width="1710" Height="270" Text="txtCode" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter1" Height="0" BackColor="16777215" />
+    <Section Type="ReportFooter" Name="ReportFooter1" Height="3345" BackColor="16777215">
+      <Control Type="AR.Field" Name="TextBox22" Left="0" Top="180" Width="1800" Height="270" Text="TOTAL AMT" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtNetTotal" Left="2520" Top="180" Width="1260" Height="270" Text="txtNetTotal" OutputFormat="#,##0.00;(#,##0.00)" Style="ddo-char-set: 0; text-align: right; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="TextBox25" Left="0" Top="990" Width="1800" Height="270" Text="CHANGE" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtTendered" Left="2520" Top="720" Width="1260" Height="270" Text="txtTendered" Style="ddo-char-set: 0; text-align: right; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="TextBox27" Left="0" Top="720" Width="1800" Height="270" Text="CASH" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtChange" Left="2520" Top="990" Width="1260" Height="270" Text="txtChange" OutputFormat="#,##0.00;(#,##0.00)" Style="ddo-char-set: 0; text-align: right; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtPosMsg1" Left="0" Top="1440" Width="3780" Height="270" Text="txtPosMsg1" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtPosMsg2" Tag=" " Left="0" Top="1710" Width="3780" Height="270" Text="txtPosMsg2" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtPosMsg3" Tag=" " Left="0" Top="1980" Width="3780" Height="270" Text="txtPosMsg3" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtPosMsg4" Tag=" " Left="0" Top="2250" Width="3780" Height="270" Text="txtPosMsg4" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Barcode" Name="Barcode1" Left="0" Top="2610" Width="1620" Height="720" Text="1570" CaptionPos="2" Checksum="0" Font="Arial" FontSize="9.75" FontStyle="1" CODE128="0;0;0" />
+      <Control Type="AR.Field" Name="TextBox1" Left="0" Top="450" Width="1800" Height="270" Text="DEPOSIT" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtDeposit" Left="2520" Top="450" Width="1260" Height="270" Text="txtDeposit" OutputFormat="#,##0.00;(#,##0.00)" Style="ddo-char-set: 0; text-align: right; font-size: 8.25pt; " />
+      <Control Type="AR.Line" Name="Line3" X1="0" Y1="90" X2="3780" Y2="90" LineStyle="2" />
+      <Control Type="AR.Line" Name="Line4" X1="0" Y1="1350" X2="3780" Y2="1350" LineStyle="2" />
+      <Control Type="AR.Line" Name="Line7" X1="0" Y1="90" X2="3780" Y2="90" LineStyle="2" />
+      <Control Type="AR.Line" Name="Line8" X1="0" Y1="1350" X2="3780" Y2="1350" LineStyle="2" />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <PageSettings />
+  <Parameters />
+</ActiveReportsLayout>
