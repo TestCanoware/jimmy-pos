@@ -218,4 +218,7 @@
   <data name="colQty.Text" xml:space="preserve">
     <value>Qty</value>
   </data>
+  <data name="colEAN.Text" xml:space="preserve">
+    <value>EAN Code</value>
+  </data>
 </root>
