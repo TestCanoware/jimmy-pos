@@ -1,36 +1,4 @@
-﻿' ------------------------------------------------------------------------------------
-' Sample W 
-' ------------------------------------------------------------------------------------
-'Importing WCFoperation namespace which has ClsWCFImpl
-' Imports WCFOperation
-'Private Sub frmWCFClient_Load(ByVal eventSender As System.Object,
-'  ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-''Instantiating Channel Factory
-'Using serviceinvoke As New ChannelFactory(Of ClsWCFImpl)(New NetTcpBinding,
-'  "net.tcp://localhost:4001/ClsWCFImpl ")
-'        Try
-'Dim service As ClsWCFImpl
-'            service = serviceinvoke.CreateChannel()
-'            If serviceinvoke.State = CommunicationState.Opened Then
-'                If service.CheckForService() Then
-'                   'Your code goes here
-'                Else
-'                   'Your code goes here
-'                End If
-'            End If
-'        Catch ex As TimeoutException
-'           'System.Diagnostics.Debug.Assert(False, "")
-'           'Debug.Assert(False, "")
-'            Trace.WriteLine("An exception of type '" + ex.GetType().ToString() _
-'            + " occurred " _
-'            + ex.Message, "Exceptions")
-'        End Try
-'    End Using
-' End Sub
-' ------------------------------------------------------------------------------------
-
-'Imports ThickClient.EMPThickClientService
-Imports ThickClient.EMPThickClientWebReference
+﻿Imports ThickClient.EMPThickClientWebReference
 Imports Utils.General
 Imports Utils
 Imports DataAccess
@@ -600,6 +568,7 @@ Public Class WebService
         Dim ds As New DataSet
         Dim arrList As New ArrayList
         Dim arrTxnQ As New ArrayList
+        Dim arrPkid As New ArrayList
 
         Try
             MakeConnection()
@@ -621,8 +590,12 @@ Public Class WebService
                 'count += ds.Tables.Count
 
                 arrTxnQ.Clear()
-                'arrList = daNut.GetTCTxQueueByTxn
-                arrList = daNut.GetTCTxQueue(10)
+                If gAppConfig.UploadByLimit Then
+                    arrList = daNut.GetTCTxQueue(gAppConfig.UploadLimit)
+                Else
+                    arrList = daNut.GetTCTxQueueByTxn
+                End If
+
                 If arrList.Count = 0 Then
                     getWS = False
                 Else
@@ -678,9 +651,7 @@ Public Class WebService
                         qo.mode = obj.mode
 
                         arrTxnQ.Add(qo)
-
-                        count += 1
-                        RaiseEvent Progress(count, "Transaction")
+                        arrPkid.Add(obj.pkid.ToString)
                     Next
 
                     'If ws.insertNextTransaction(qo) Then
@@ -688,14 +659,19 @@ Public Class WebService
                     'End If                
 
                     If ws.insertTransactionQueue(arrTxnQ.ToArray(GetType(txQueueObject))) Then
-                        For Each obj As DATCTxQueueObject In arrList
-                            daNut.UpdateTCTxQueue(obj)
-                        Next
+                        'For Each obj As DATCTxQueueObject In arrList
+                        'daNut.UpdateTCTxQueue(obj)
+                        'Next
+                        Dim strCsv As String = ""
+                        strCsv = String.Join(",", arrPkid.ToArray(GetType(String)))
+                        daNut.UpdateTCTxQueueByStatus(strCsv, DATCTxQueue.STATUS_COMPLETE)
                     Else
                         getWS = False
                         Messenger.ShowError("Upload Transaction Error!")
                     End If
-                    
+
+                    count += arrTxnQ.Count
+                    RaiseEvent Progress(count, "Transaction")
                 End If
 
             End While
@@ -791,36 +767,22 @@ Public Class WebService
     Public Sub GetFirst()
         Dim start As DateTime = GetServerTime()
        
-        'Me.GetBranch()
+        Me.GetBranch()
         Me.GetUser()
-        'Me.GetCardPaymentConfig()
-        'Me.GetCashAccount()
-        'Me.GetTaxConfig()
-        'Me.GetCustAccount()
-        'Me.GetCustUser()
-        'Me.GetItem()
-        'Me.GetCategoryTree()
-        'Me.GetStock()
-        'Me.GetSerialNumberDelta()
+        Me.GetCardPaymentConfig()
+        Me.GetCashAccount()
+        Me.GetTaxConfig()
+        Me.GetCustAccount()
+        Me.GetCustUser()
+        Me.GetItem()
+        Me.GetCategoryTree()
+        Me.GetStock()
+        Me.GetSerialNumberDelta()
         Me.InsertAuditTrail()
 
         If Not isError Then
             InsertPosSyncTiming(start, GetServerTime, DAPosSyncTiming.STATUS_DOWNLOAD)
         End If
-
-
-        'ws.Endpoint()
-
-
-
-
-        'Dim service As ClsWCFImpl
-        'service = serviceinvoke.CreateChannel()
-        'If serviceinvoke.State = CommunicationState.Opened Then
-        '    'Casting the Proxy with IContextChannel and set the Operation timeout property
-        '    'with the time duration in seconds
-
-        'End If
 
     End Sub
 

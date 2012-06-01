@@ -81,6 +81,8 @@
   <ItemGroup>
     <Compile Include="DataSetHelper.vb" />
     <Compile Include="DirectPrinter.vb" />
+    <Compile Include="DisplayPole.vb">
+    </Compile>
     <Compile Include="RegistryAccess.vb" />
     <Compile Include="CreditCard.vb" />
     <Compile Include="General.vb" />

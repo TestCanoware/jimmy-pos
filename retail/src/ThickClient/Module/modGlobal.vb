@@ -50,18 +50,18 @@ Module modGlobal
     Public gReportPath As String = Path.Combine(Application.StartupPath, "reports")
 
     Public gIsSyncProcessing As Boolean = False
-    Public gComPort As New Rs232()
+    Public gComPort As New DisplayPole
 
     Public Structure Permission
 
         Public id As Integer
-        Public Const VoidReceipt As String = "pos_perm_void_receipt"
-        Public Const CashIn As String = "pos_perm_cash_in"
-        Public Const CashOut As String = "pos_perm_cash_out"
+
+        Public Const CashInOut As String = "pos_perm_cash_in_out"        
         Public Const Config As String = "pos_perm_config"
-        Public Const Report As String = "pos_perm_view_reports"
+        Public Const ViewReport As String = "pos_perm_view_reports"
         Public Const DeleteItem As String = "pos_perm_delete_item"
         Public Const CancelSale As String = "pos_perm_cancel_sale"
+        Public Const EditPrice As String = "pos_perm_edit_price"
 
     End Structure
 
@@ -106,6 +106,8 @@ Module modGlobal
         ' Synchronization
         Public AutoSynchronize As Boolean
         Public SyncerTiming As String
+        Public UploadByLimit As Boolean
+        Public UploadLimit As Integer
 
         ' Others
         Public MsgWelcome As String
@@ -175,11 +177,14 @@ Module modGlobal
             ' Synchronization
             .SyncerTiming = IIf(objDA.GetPosConfig("POS_CONFIG_SYNCER_TIMING") = "", "5000", objDA.GetPosConfig("POS_CONFIG_SYNCER_TIMING"))
             .AutoSynchronize = IIf(objDA.GetPosConfig("POS_CONFIG_AUTO_SYNCHRONIZE").ToUpper = "TRUE", True, False)
+            .UploadByLimit = IIf(objDA.GetPosConfig("POS_CONFIG_UPLOAD_BY_LIMIT").ToUpper = "TRUE", True, False)
+            .UploadLimit = IIf(objDA.GetPosConfig("POS_CONFIG_UPLOAD_LIMIT") = "", 10, objDA.GetPosConfig("POS_CONFIG_UPLOAD_LIMIT"))
 
             ' Printable
             .PrintableReceipt = objDA.GetPosConfig("POS_CONFIG_PRINTABLE_RECEIPT")
             .PrintableDailySalesReport = objDA.GetPosConfig("POS_CONFIG_PRINTABLE_DAILY_SALES_REPORT")
             .PrintableStockSummarySoldReport = objDA.GetPosConfig("POS_CONFIG_PRINTABLE_STOCK_SUMMARY_SOLD_REPORT")
+
             ' 20100507 Jimmy
             Dim value As String = objDA.GetPosConfig("POS_CONFIG_PRINTER_SETUP")
             If value = "" Then
@@ -199,13 +204,17 @@ Module modGlobal
     Public Function gLoadPermission(ByVal permission As String) As Boolean
         If gUserObj.username.ToUpper = "DEVELOPER" Then Return True
 
-        'Dim frm As New frmUserPassword
-        'frm.permission = permission
+        If objDA.IsExistUserPermission(gUserObj.userid, permission) Then
+            Return True
+        End If
 
-        'If frm.ShowDialog = DialogResult.Yes Then Return True
+        Dim frm As New frmUserPassword
+        frm.permission = permission
 
-        'Return False
-        Return True
+        If frm.ShowDialog = DialogResult.Yes Then Return True
+
+        Return False
+
 
     End Function
 
@@ -526,9 +535,9 @@ Module modGlobal
 
     Public Sub gOpenComPort()
 
-        Try
-            gComPort.Open(gSysConfig.DisplayPoleComPort, gSysConfig.DisplayPoleBaudRate, gSysConfig.DisplayPoleDataBits, _
-                                gSysConfig.DisplayPoleParity, gSysConfig.DisplayPoleStopBits, 4096)
+        Try            
+            gComPort.OpenPort("COM" & gSysConfig.DisplayPoleComPort, gSysConfig.DisplayPoleBaudRate, gSysConfig.DisplayPoleDataBits, _
+                                gSysConfig.DisplayPoleParity, gSysConfig.DisplayPoleStopBits)
 
         Catch ex As Exception
             WriteToLogFile(ex.Message)
@@ -562,15 +571,34 @@ Module modGlobal
             End If
 
             'Clear text
-            gComPort.Write(Encoding.ASCII.GetBytes(Chr(12)))
-            gComPort.Write(Encoding.ASCII.GetBytes(msg1))
-            If (msg1.Length < 20) Then
-                gComPort.Write(Encoding.ASCII.GetBytes(vbCrLf))
-            ElseIf (msg1.Length <> 20) Then
-                gComPort.Write(Encoding.ASCII.GetBytes(" "))
+            'gComPort.Write(Encoding.ASCII.GetBytes(Chr(12)))
+            'gComPort.Write(Encoding.ASCII.GetBytes(msg1))
+            'If (msg1.Length < 20) Then
+            ' gComPort.Write(Encoding.ASCII.GetBytes(vbCrLf))
+            'ElseIf (msg1.Length <> 20) Then
+            'gComPort.Write(Encoding.ASCII.GetBytes(" "))
+            'End If
+
+            'gComPort.Write(Encoding.ASCII.GetBytes(msg2))
+
+            'Clear text
+            gComPort.ClearDisplay()
+            'If (msg1.Length > 0) Then gComPort.Display(msg1, 0)
+            'If (msg2.Length > 0) Then gComPort.Display(msg2, 1)
+
+            If msg1.Length > 20 Then
+                msg1 = msg1.Substring(0, 20)
             End If
 
-            gComPort.Write(Encoding.ASCII.GetBytes(msg2))
+            gComPort.Display(msg1.PadRight(20))
+            'If (msg1.Length < 20) Then
+            'gComPort.Display()
+            'ElseIf (msg1.Length <> 20) Then
+            'gComPort.Write(Encoding.ASCII.GetBytes(" "))
+            'End If
+
+            gComPort.Display(msg2.PadLeft(20))
+
 
         Catch ex As Exception
             WriteToLogFile(ex.Message)
@@ -734,7 +762,7 @@ Module modGlobal
     End Function
 
 
-    Public Sub gSetDataTableToCSV(ByVal dtable As DataTable, ByVal path_filename As String, ByVal sep_char As String)
+    Public Sub gSetDataTableToCSV(ByVal dtable As DataTable, ByVal path_filename As String, ByVal sep_char As String, ByRef lbl As System.Windows.Forms.Label)
         Dim writer As System.IO.StreamWriter
         Try
             writer = New System.IO.StreamWriter(path_filename, False)
@@ -749,15 +777,19 @@ Module modGlobal
             Next
             writer.WriteLine(builder.ToString())
 
+            Dim i As Integer = 0
             For Each row As DataRow In dtable.Rows
                 _sep = ""
                 builder = New System.Text.StringBuilder
 
                 For Each col As DataColumn In dtable.Columns
-                    builder.Append(_sep).Append(PreparedStatementCSV(row(col.ColumnName)))
+                    builder.Append(_sep).Append("""" & PreparedStatementCSV(row(col.ColumnName)) & """")
                     _sep = sep_char
                 Next
                 writer.WriteLine(builder.ToString())
+                i += 1
+                lbl.Text = "Export in progress. Please wait.... " & i & " of " & dtable.Rows.Count & " transactions."
+                Application.DoEvents()
             Next
         Catch ex As Exception
 

@@ -394,6 +394,16 @@ Public NotInheritable Class General
 
     End Function
 
+    Public Shared Function FormatCurrencyNoComma(ByVal value As Object) As String
+
+        Try
+            Return Format(Convert.ToDecimal(value), "0.00")
+        Catch ex As Exception
+            Return value
+        End Try
+
+    End Function
+
     Public Shared Function FormatInt(ByVal value As Object) As String
 
         Try
@@ -1083,4 +1093,16 @@ Public NotInheritable Class General
         myconfig.Save()
     End Sub
 
+
+    Public Shared Function GetCSV(ByVal arr As ArrayList) As String
+        Dim str As String = ""
+
+        For Each s As String In arr
+
+            If str.Length > 0 Then str += ","
+            str += s
+        Next
+
+        Return str
+    End Function
 End Class

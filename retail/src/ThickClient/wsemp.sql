@@ -811,6 +811,7 @@ CREATE TABLE `cust_invoice_item` (
   `jobsheet_item_id` bigint(20) default '0',
   `tax_option` varchar(50) default '',
   `uom` varchar(50) default '',
+  `serial_numbers` text default '',
   PRIMARY KEY  (`pkid`),
   KEY `fk_invoice_id` (`invoice_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

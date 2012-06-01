@@ -45,6 +45,34 @@ Public Class DASerialNumberDelta
     Public Const LOYALTY_POINTS_AWARDED = "loyalty_points_awarded"
     Public Const LOYALTY_POINTS_REDEEMED = "loyalty_points_redeemed"
 
+    ' Constants for TXN_TYPE
+    Public Const TT_SALES = "S"
+    Public Const TT_SALES_RETURN = "I"
+    Public Const TT_PURCHASE = "R"
+    Public Const TT_PURCHASE_RETURN = "O"
+    Public Const TT_ADJUSTMENT = "A"
+    Public Const TT_TRANSFER = "T"
+    Public Const TT_WRITE_OFF = "W"
+    Public Const TT_TRADEIN = "TI"
+
+    ' Constants for STATUS
+    Public Const STATUS_ACTIVE = "act"
+    Public Const STATUS_INACTIVE = "ina"
+    Public Const STATUS_CANCELLED = "cxl"
+
+    ' Constants for NAMESPACE
+    Public Const NS_INVENTORY = "inv"
+    Public Const NS_WAREHOUSE = "whm"
+    Public Const NS_SUPPLIER = "supp"
+    Public Const NS_CUSTOMER = "cust"
+    Public Const NS_INTERNAL = "internal"
+    Public Const NS_MRP = "mrp"
+
+    ' Constants for REMARKS
+    Public Const REM_CANCEL = "Cancelled Transaction"
+    Public Const REM_GOODS_RTN_CANCEL = "Cancelled Goods Returned"
+    Public Const REM_TRADE_IN = "Trade-In Transaction"
+
 
     Public Const TABLENAME = "inv_serial_number_delta"
     Public Const NO_OF_COLUMNS As Integer = 39
@@ -220,6 +248,35 @@ Public Class DASerialNumberDelta
 
     End Function
 
+
+    '***************************************************************************
+    '* GetDataSetByStockId
+    '**************************************************************************/
+    Public Function GetDataSetByStockId(ByVal stockId As Integer) As DataSet
+
+        WriteToLogFile(CLASSNAME & " - In GetDataSetByStockId")
+
+        Dim comm As New Commands
+        Dim strSQL As String
+
+        strSQL = " SELECT serial, SUM(qty) AS total FROM {T} " & _
+                                   " WHERE stockId = " & stockId & _
+                                   " GROUP BY SERIAL HAVING total > 0 " & _
+                                   " ORDER BY {1} "
+        strSQL = strSQL.Replace("{T}", TABLENAME)
+        strSQL = strSQL.Replace("{1}", SERIAL)
+
+        Try
+            WriteToLogFile(strSQL)
+            Return comm.ExecuteQuery(strSQL, Commands.ReturnType.DataSetType)
+
+        Catch ex As Exception
+            Throw New Exception(CLASSNAME & " - GetDataSetByStockId - " & ex.Message)
+        End Try
+
+        WriteToLogFile(CLASSNAME & " - Leave GetDataSetByStockId")
+
+    End Function
 
     '***************************************************************************
     '* GetObjectsGiven

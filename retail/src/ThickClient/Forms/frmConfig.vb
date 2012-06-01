@@ -237,6 +237,8 @@ Public Class frmConfig
         chkAutoSynchronize.Checked = gAppConfig.AutoSynchronize
         txtSyncerTiming.Text = gAppConfig.SyncerTiming
         btnUpload.Enabled = Not gAppConfig.AutoSynchronize
+        chkUploadByLimit.Checked = gAppConfig.UploadByLimit
+        nuLimit.Value = gAppConfig.UploadLimit
 
         ' Printable
         cboPrintableReceipt.Text = gAppConfig.PrintableReceipt
@@ -317,15 +319,17 @@ Public Class frmConfig
 
     Private Sub btnDownload_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDownload.Click
 
-        If txtWebService.Text = "" Then
+        If txtWebService.Text.Trim = "" Then
             Messenger.ShowWarning("The Web Service does not exist!")
             Exit Sub
         End If
 
-        If cboBranches.Text = "" Then
+        If cboBranches.Text.Trim = "" Then
             Messenger.ShowWarning("The Branch does not exist!")
             Exit Sub
         End If
+
+        objDA.UpdatePosConfig("POS_CONFIG_WEB_SERVICE", txtWebService.Text.Trim)
 
         Dim cursor As New WaitCursor
         EnabledControls(False)
@@ -360,15 +364,20 @@ Public Class frmConfig
 
     Private Sub btnUpload_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpload.Click
 
-        If txtWebService.Text = "" Then
+        objDA.UpdatePosConfig("POS_CONFIG_UPLOAD_BY_LIMIT", chkUploadByLimit.Checked.ToString)
+        objDA.UpdatePosConfig("POS_CONFIG_UPLOAD_LIMIT", nuLimit.Value)
+
+        If txtWebService.Text.Trim = "" Then
             Messenger.ShowWarning("The Web Service does not exist!")
             Exit Sub
         End If
 
-        If cboBranches.Text = "" Then
+        If cboBranches.Text.Trim = "" Then
             Messenger.ShowWarning("The Branch does not exist!")
             Exit Sub
         End If
+
+        objDA.UpdatePosConfig("POS_CONFIG_WEB_SERVICE", txtWebService.Text.Trim)
 
         Dim cursor As New WaitCursor
         EnabledControls(False)
@@ -499,6 +508,9 @@ Public Class frmConfig
         objDA.UpdatePosConfig("POS_CONFIG_APPLY_FIVE_CENT_CONCEPT", chkApplyFiveCent.Checked.ToString)
         objDA.UpdatePosConfig("POS_CONFIG_FIVE_CENT_ITEM_CODE", txtItemCode.Text)
 
+        objDA.UpdatePosConfig("POS_CONFIG_UPLOAD_BY_LIMIT", chkUploadByLimit.Checked.ToString)
+        objDA.UpdatePosConfig("POS_CONFIG_UPLOAD_LIMIT", nuLimit.Value)
+
         'Reload config
         gLoadAppConfig()
 
@@ -581,6 +593,7 @@ Public Class frmConfig
     Private Sub btnImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImport.Click
         Dim strFile As String = txtImportFile.Text.Trim
         If strFile.Length = 0 Then Exit Sub
+        Dim myCursor As New WaitCursor
 
         Try
 
@@ -591,17 +604,20 @@ Public Class frmConfig
             End If
 
             'lblImportMsg.Text = "Import in progress. Please wait...."
-            Timer1.Enabled = True
-            ticks = 0
+            'Timer1.Enabled = True
+            'ticks = 0
 
-            Thread1 = New System.Threading.Thread(AddressOf ImportSQL)
-            Thread1.Start()
+            'Thread1 = New System.Threading.Thread(AddressOf ImportSQL)
+            'Thread1.Start()
+
+            ImportSQL()
 
         Catch ex As Exception
             Messenger.ShowError(ex)
-            Timer1.Enabled = False
+            'Timer1.Enabled = False
         End Try
 
+        myCursor.Dispose()
     End Sub
 
     Private Sub ImportSQL()
@@ -620,16 +636,16 @@ Public Class frmConfig
             Dim comm As New Commands
             comm.ExecuteNonQuery(sb.ToString)
 
-            Timer1.Enabled = False
+            'Timer1.Enabled = False
             Messenger.ShowInformation(gMSG_IMPORT_SUCCESSFULLY)
 
         Catch ex As Exception
-            Timer1.Enabled = False
+            'Timer1.Enabled = False
             Messenger.ShowError(ex)
 
         End Try
 
-        Thread1.Abort()
+        'Thread1.Abort()
 
     End Sub
 
@@ -656,24 +672,28 @@ Public Class frmConfig
     Private Sub btnExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExport.Click
         Dim strFile As String = txtExportFile.Text.Trim
         If strFile.Length = 0 Then Exit Sub
+        Dim myCursor As New WaitCursor
 
         Try
 
             'lblExportMsg.Text = "Export in progress. Please wait...."
-            Timer2.Enabled = True
+            'Timer2.Enabled = True
             ticks2 = 0
 
             'Timer3.Enabled = True
 
-            Thread1 = New System.Threading.Thread(AddressOf ExportSQL)
-            Thread1.Start()
+            'Thread1 = New System.Threading.Thread(AddressOf ExportSQL)
+            'Thread1.Start()
+
+            ExportSQL()
 
         Catch ex As Exception
-            Timer2.Enabled = False
+            'Timer2.Enabled = False
             Messenger.ShowError(ex)
 
         End Try
 
+        myCursor.Dispose()
     End Sub
 
 
@@ -695,7 +715,7 @@ Public Class frmConfig
 
             If ds.Tables.Count = 0 Then Exit Sub
             If ds.Tables(0).Rows.Count = 0 Then
-                Timer2.Enabled = False                
+                'Timer2.Enabled = False                
                 'Timer3.Enabled = True
                 Messenger.ShowInformation(gMSG_NO_EXPORT_TRANSACTIONS)
             Else
@@ -705,26 +725,31 @@ Public Class frmConfig
                 'oWriter.Close()
                 'oWriter.Dispose()
 
-                gSetDataTableToCSV(ds.Tables(0), file, ",")
+                gSetDataTableToCSV(ds.Tables(0), file, ",", lblExportMsg)
 
+                Dim i As Integer = 0
                 For Each dr As DataRow In ds.Tables(0).Rows
                     Dim pkid As Long = dr(DATCTxQueue.PKID)
                     objDA.UpdateTCTxQueueByStatus(pkid.ToString, DATCTxQueue.STATUS_EXPORT)
+
+                    i += 1
+                    lblExportMsg.Text = "Update status of Transactions: " & i & " of " & ds.Tables(0).Rows.Count
+                    Application.DoEvents()
                 Next
 
-                Timer2.Enabled = False                
+                'Timer2.Enabled = False                
                 'Timer3.Enabled = True
                 Messenger.ShowInformation(gMSG_EXPORT_SUCCESSFULLY)
 
             End If
 
         Catch ex As Exception
-            Timer2.Enabled = False
+            'Timer2.Enabled = False
             'Timer3.Enabled = True
             Messenger.ShowError(ex)            
         End Try
 
-        Thread1.Abort()
+        'Thread1.Abort()
 
     End Sub
 

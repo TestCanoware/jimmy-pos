@@ -119,7 +119,7 @@ Public Class frmFindCustAcc
 
     Private Sub RecordSelected(ByVal index As Integer)
         'return custAccId
-        Me.keywoards = DataGridView1.Rows(index).Cells("col1").Value
+        Me.keywoards = DataGridView1.Rows(index).Cells("colCustId").Value
         Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub
 

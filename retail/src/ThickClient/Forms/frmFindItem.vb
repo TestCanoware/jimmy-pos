@@ -36,6 +36,15 @@ Public Class frmFindItem
             .ReadOnly = True
         End With
 
+        Dim colEAN As New System.Windows.Forms.DataGridViewTextBoxColumn
+        With colEAN
+            .AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+            .DataPropertyName = DAItem.EANCODE
+            .HeaderText = gGetLocale(Me.Name, "colEAN.Text")
+            .Name = "colEAN"
+            .ReadOnly = True
+        End With
+
         Dim colQty As New System.Windows.Forms.DataGridViewTextBoxColumn
         With colQty
             .AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -57,7 +66,7 @@ Public Class frmFindItem
         colQty.DefaultCellStyle = GetDataGridViewCellStyle(GetType(System.Int16))
         colPrice.DefaultCellStyle = GetDataGridViewCellStyle(GetType(System.Decimal))
 
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {colItemCode, colName, colQty, colPrice})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {colItemCode, colName, colEAN, colQty, colPrice})
         Me.DataGridView1.Focus()
 
         txtSearch.Text = keywoards

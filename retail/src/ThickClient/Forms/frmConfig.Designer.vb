@@ -71,6 +71,8 @@ Partial Class frmConfig
         Me.txtMsg1 = New System.Windows.Forms.TextBox
         Me.lblMessage1 = New System.Windows.Forms.Label
         Me.tbSynch = New System.Windows.Forms.TabPage
+        Me.nuLimit = New System.Windows.Forms.NumericUpDown
+        Me.chkUploadByLimit = New System.Windows.Forms.CheckBox
         Me.lblEndTime = New System.Windows.Forms.Label
         Me.lblStartTime = New System.Windows.Forms.Label
         Me.lblUpload = New System.Windows.Forms.Label
@@ -131,14 +133,13 @@ Partial Class frmConfig
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.chkUploadByLimit = New System.Windows.Forms.CheckBox
-        Me.nuLimit = New System.Windows.Forms.NumericUpDown
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.tbStandard.SuspendLayout()
         Me.tbMessageSetup.SuspendLayout()
         Me.tbReceiptBottomMsg.SuspendLayout()
         Me.tbSynch.SuspendLayout()
+        CType(Me.nuLimit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbOthers.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -146,7 +147,6 @@ Partial Class frmConfig
         Me.tbImportExport.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.grpImport.SuspendLayout()
-        CType(Me.nuLimit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -633,6 +633,25 @@ Partial Class frmConfig
         Me.tbSynch.TabIndex = 4
         Me.tbSynch.Text = "Synchronization"
         Me.tbSynch.UseVisualStyleBackColor = True
+        '
+        'nuLimit
+        '
+        Me.nuLimit.Location = New System.Drawing.Point(351, 108)
+        Me.nuLimit.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nuLimit.Name = "nuLimit"
+        Me.nuLimit.Size = New System.Drawing.Size(56, 20)
+        Me.nuLimit.TabIndex = 48
+        Me.nuLimit.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'chkUploadByLimit
+        '
+        Me.chkUploadByLimit.AutoSize = True
+        Me.chkUploadByLimit.Location = New System.Drawing.Point(245, 108)
+        Me.chkUploadByLimit.Name = "chkUploadByLimit"
+        Me.chkUploadByLimit.Size = New System.Drawing.Size(99, 17)
+        Me.chkUploadByLimit.TabIndex = 47
+        Me.chkUploadByLimit.Text = "Upload By Limit"
+        Me.chkUploadByLimit.UseVisualStyleBackColor = True
         '
         'lblEndTime
         '
@@ -1184,27 +1203,6 @@ Partial Class frmConfig
         '
         Me.Timer3.Interval = 10
         '
-        'chkUploadByLimit
-        '
-        Me.chkUploadByLimit.AutoSize = True
-        Me.chkUploadByLimit.Location = New System.Drawing.Point(245, 108)
-        Me.chkUploadByLimit.Name = "chkUploadByLimit"
-        Me.chkUploadByLimit.Size = New System.Drawing.Size(99, 17)
-        Me.chkUploadByLimit.TabIndex = 47
-        Me.chkUploadByLimit.Text = "Upload By Limit"
-        Me.chkUploadByLimit.UseVisualStyleBackColor = True
-        '
-        'nuLimit
-        '
-        Me.nuLimit.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.nuLimit.Location = New System.Drawing.Point(351, 108)
-        Me.nuLimit.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
-        Me.nuLimit.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nuLimit.Name = "nuLimit"
-        Me.nuLimit.Size = New System.Drawing.Size(56, 20)
-        Me.nuLimit.TabIndex = 48
-        Me.nuLimit.Value = New Decimal(New Integer() {200, 0, 0, 0})
-        '
         'frmConfig
         '
         Me.AcceptButton = Me.btnOk
@@ -1235,6 +1233,7 @@ Partial Class frmConfig
         Me.tbReceiptBottomMsg.PerformLayout()
         Me.tbSynch.ResumeLayout(False)
         Me.tbSynch.PerformLayout()
+        CType(Me.nuLimit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbOthers.ResumeLayout(False)
         Me.tbOthers.PerformLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1246,7 +1245,6 @@ Partial Class frmConfig
         Me.GroupBox1.PerformLayout()
         Me.grpImport.ResumeLayout(False)
         Me.grpImport.PerformLayout()
-        CType(Me.nuLimit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

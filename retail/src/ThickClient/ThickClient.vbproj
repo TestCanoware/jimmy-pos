@@ -117,6 +117,12 @@
     <Compile Include="Classes\PrintingFormat.vb" />
     <Compile Include="Classes\SalesTxn.vb" />
     <Compile Include="Classes\WebService.vb" />
+    <Compile Include="Forms\frmSelectSN.Designer.vb">
+      <DependentUpon>frmSelectSN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSelectSN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -731,7 +737,6 @@
       <DependentUpon>frmScreenKeyboard.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="Reports\rptSummaryStockSold.resx">
       <DependentUpon>rptSummaryStockSold.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -963,10 +968,15 @@
     <None Include="Web References\EMPThickClientWebReference\userObject.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <EmbeddedResource Include="Forms\frmSelectSN.resx">
+      <DependentUpon>frmSelectSN.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInstallation.resx">
       <DependentUpon>frmInstallation.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="wsemp.sql" />
   </ItemGroup>
   <ItemGroup>

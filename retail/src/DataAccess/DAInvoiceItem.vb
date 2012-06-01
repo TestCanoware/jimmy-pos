@@ -90,13 +90,14 @@ Public Class DAInvoiceItem
     Public Const UOM = "uom"
     Public Const TAX_OPTION = "tax_option"
     Public Const JOBSHEET_ITEM_ID = "jobsheet_item_id"
+    Public Const SERIAL_NUMBERS = "serial_numbers"
 
     Public Const STATUS_ACTIVE = "act"
     Public Const STATUS_INACTIVE = "ina"
     Public Const STATUS_CANCELLED = "cxl"
 
     Public Const TABLENAME = "cust_invoice_item"
-    Public Const NO_OF_COLUMNS As Integer = 84
+    Public Const NO_OF_COLUMNS As Integer = 85
     Public Const APP_NAME = "ThickClient-DataAccess"
     Public Const START_ID = 1001
 
@@ -371,6 +372,7 @@ Public Class DAInvoiceItem
             obj.uom = row(UOM)
             obj.taxOption = row(TAX_OPTION)
             obj.jobsheetItemId = row(JOBSHEET_ITEM_ID)
+            obj.serialNumbers = row(SERIAL_NUMBERS)
 
         Catch ex As Exception
             Throw New Exception(CLASSNAME & " - GetObject - " & ex.Message)
@@ -471,7 +473,7 @@ Public Class DAInvoiceItem
         strSQL = strSQL.Replace("{82}", UOM)
         strSQL = strSQL.Replace("{83}", TAX_OPTION)
         strSQL = strSQL.Replace("{84}", JOBSHEET_ITEM_ID)
-
+        strSQL = strSQL.Replace("{85}", SERIAL_NUMBERS)
 
         strSQL = strSQL.Replace("{V1}", PreparedStatement(obj.mPkid))
         strSQL = strSQL.Replace("{V2}", PreparedStatement(obj.mInvoiceId))
@@ -557,6 +559,7 @@ Public Class DAInvoiceItem
         strSQL = strSQL.Replace("{V82}", PreparedStatement(obj.uom))
         strSQL = strSQL.Replace("{V83}", PreparedStatement(obj.taxOption))
         strSQL = strSQL.Replace("{V84}", PreparedStatement(obj.jobsheetItemId))
+        strSQL = strSQL.Replace("{V85}", PreparedStatement(obj.serialNumbers))
 
         Return strSQL
 

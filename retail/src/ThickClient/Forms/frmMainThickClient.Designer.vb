@@ -442,7 +442,7 @@ Partial Class frmMainThickClient
         GlColumn2.NumericSort = False
         GlColumn2.Text = "Item"
         GlColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GlColumn2.Width = 175
+        GlColumn2.Width = 158
         GlColumn3.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None
         GlColumn3.CheckBoxes = False
         GlColumn3.ImageIndex = -1
@@ -458,7 +458,7 @@ Partial Class frmMainThickClient
         GlColumn4.NumericSort = False
         GlColumn4.Text = "Price"
         GlColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GlColumn4.Width = 66
+        GlColumn4.Width = 75
         GlColumn5.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None
         GlColumn5.CheckBoxes = False
         GlColumn5.ImageIndex = -1
@@ -472,13 +472,13 @@ Partial Class frmMainThickClient
         GlColumn6.ImageIndex = -1
         GlColumn6.Name = "colAmount"
         GlColumn6.NumericSort = False
-        GlColumn6.Text = "Amount"
+        GlColumn6.Text = "Amt"
         GlColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GlColumn6.Width = 66
+        GlColumn6.Width = 75
         Me.GlacialList1.Columns.AddRange(New GlacialComponents.Controls.GLColumn() {GlColumn1, GlColumn2, GlColumn3, GlColumn4, GlColumn5, GlColumn6})
         Me.GlacialList1.ControlStyle = GlacialComponents.Controls.GLControlStyles.SuperFlat
         Me.GlacialList1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GlacialList1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.GlacialList1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GlacialList1.ForeColor = System.Drawing.Color.White
         Me.GlacialList1.FullRowSelect = True
         Me.GlacialList1.GridColor = System.Drawing.Color.LightGray
@@ -494,7 +494,7 @@ Partial Class frmMainThickClient
         Me.GlacialList1.HoverEvents = False
         Me.GlacialList1.HoverTime = 1
         Me.GlacialList1.ImageList = Nothing
-        Me.GlacialList1.ItemHeight = 20
+        Me.GlacialList1.ItemHeight = 21
         GlItem1.BackColor = System.Drawing.Color.White
         GlItem1.ForeColor = System.Drawing.Color.Black
         GlItem1.RowBorderColor = System.Drawing.Color.Black
@@ -526,7 +526,7 @@ Partial Class frmMainThickClient
         GlSubItem4.ForeColor = System.Drawing.Color.Black
         GlSubItem4.ImageAlignment = System.Windows.Forms.HorizontalAlignment.Left
         GlSubItem4.ImageIndex = -1
-        GlSubItem4.Text = "9,999.99"
+        GlSubItem4.Text = "9999.99"
         GlSubItem5.BackColor = System.Drawing.Color.Empty
         GlSubItem5.Checked = False
         GlSubItem5.ForceText = False
@@ -540,7 +540,7 @@ Partial Class frmMainThickClient
         GlSubItem6.ForeColor = System.Drawing.Color.Black
         GlSubItem6.ImageAlignment = System.Windows.Forms.HorizontalAlignment.Left
         GlSubItem6.ImageIndex = -1
-        GlSubItem6.Text = "9,999.00"
+        GlSubItem6.Text = "9999.00"
         GlItem1.SubItems.AddRange(New GlacialComponents.Controls.GLSubItem() {GlSubItem1, GlSubItem2, GlSubItem3, GlSubItem4, GlSubItem5, GlSubItem6})
         GlItem1.Text = "1"
         GlItem2.BackColor = System.Drawing.Color.White
@@ -574,7 +574,7 @@ Partial Class frmMainThickClient
         GlSubItem10.ForeColor = System.Drawing.Color.Black
         GlSubItem10.ImageAlignment = System.Windows.Forms.HorizontalAlignment.Left
         GlSubItem10.ImageIndex = -1
-        GlSubItem10.Text = "9,999.99"
+        GlSubItem10.Text = "9999.99"
         GlSubItem11.BackColor = System.Drawing.Color.Empty
         GlSubItem11.Checked = False
         GlSubItem11.ForceText = False
@@ -588,7 +588,7 @@ Partial Class frmMainThickClient
         GlSubItem12.ForeColor = System.Drawing.Color.Black
         GlSubItem12.ImageAlignment = System.Windows.Forms.HorizontalAlignment.Left
         GlSubItem12.ImageIndex = -1
-        GlSubItem12.Text = "9,999.00"
+        GlSubItem12.Text = "9999.00"
         GlItem2.SubItems.AddRange(New GlacialComponents.Controls.GLSubItem() {GlSubItem7, GlSubItem8, GlSubItem9, GlSubItem10, GlSubItem11, GlSubItem12})
         GlItem2.Text = "2"
         Me.GlacialList1.Items.AddRange(New GlacialComponents.Controls.GLItem() {GlItem1, GlItem2})
@@ -1473,7 +1473,7 @@ Partial Class frmMainThickClient
         '
         Me.txtItem.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold)
+        Me.txtItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItem.Location = New System.Drawing.Point(7, 20)
         Me.txtItem.MaxLength = 20
         Me.txtItem.Name = "txtItem"

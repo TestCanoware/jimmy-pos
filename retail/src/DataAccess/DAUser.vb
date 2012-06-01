@@ -168,10 +168,12 @@ Public Class DAUser
         Dim comm As New Commands
         Dim strSQL As String
 
-        strSQL = "SELECT * FROM {T} ORDER BY {1}"
+        strSQL = "SELECT * FROM {T} WHERE {2}={V2} ORDER BY {1}"
 
         strSQL = strSQL.Replace("{T}", TABLENAME)
         strSQL = strSQL.Replace("{1}", USERNAME)
+        strSQL = strSQL.Replace("{2}", STATUS)
+        strSQL = strSQL.Replace("{V2}", "'active'")
 
         Try
             WriteToLogFile(strSQL)

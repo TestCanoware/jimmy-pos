@@ -44,6 +44,8 @@
     ' End 20100226 Jimmy
 
     Public taxOption As String = ""
+    Public serialized As Boolean = False
+    Public arrSerials As New ArrayList
 
     Public Const TYPE_NORMAL = "NORMAL"
     Public Const TYPE_FOC = "FOC"

@@ -86,6 +86,7 @@ Public Class DAInvoiceItemObject
     Public uom As String = ""
     Public taxOption As String = ""
     Public jobsheetItemId As Long
+    Public serialNumbers As String = ""
 
     Public Sub New()
         MyBase.new()
@@ -131,6 +132,8 @@ Public Class DAInvoiceItemObject
             Me.jobsheetItemId = dr.docItemKey
         End If
 
+        Me.serialNumbers = Utils.General.GetCSV(dr.arrSerials)
+
     End Sub
 
 
@@ -154,6 +157,7 @@ Public Class DAInvoiceItemObject
         dr.taxType = Me.taxType
 
         dr.taxOption = Me.taxOption
+        dr.arrSerials = New ArrayList(Me.serialNumbers.Split(","c))
 
         Return dr
 

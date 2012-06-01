@@ -533,10 +533,12 @@ Public Class DataAccessNut
             Dim dt As New DataTable()
             Dim colItemCode As New DataColumn(DAItem.ITEM_CODE)
             Dim colItemName As New DataColumn(DAItem.NAME)
+            Dim colItemEAN As New DataColumn(DAItem.EANCODE)
             Dim colBalance As New DataColumn(DAStock.BALANCE, System.Type.GetType("System.Int32"))
             Dim colPrice As New DataColumn(DAItem.PRICELIST, System.Type.GetType("System.Decimal"))
             dt.Columns.Add(colItemCode)
             dt.Columns.Add(colItemName)
+            dt.Columns.Add(colItemEAN)
             dt.Columns.Add(colBalance)
             dt.Columns.Add(colPrice)
 
@@ -557,6 +559,7 @@ Public Class DataAccessNut
                     rowNew = dsNew.Tables(0).NewRow
                     rowNew(DAItem.ITEM_CODE) = row(DAItem.ITEM_CODE)
                     rowNew(DAItem.NAME) = row(DAItem.NAME)
+                    rowNew(DAItem.EANCODE) = row(DAItem.EANCODE)
                     rowNew(DAStock.BALANCE) = obj.balance
                     rowNew(DAItem.PRICELIST) = row(gGetPriceFieldByConfig)
 
@@ -621,6 +624,7 @@ Public Class DataAccessNut
                         .balQty = obj.balance
                         .discount = 0
                         .unitCostMA = obj.unitCostMA
+                        .serialized = row(DAItem.SERIALIZED)
 
                         If (row(DAItem.TAX_OPTION) = DAItem.TAX_ENABLED) Then
                             .taxEnabled = True
@@ -2032,6 +2036,23 @@ Public Class DataAccessNut
 
     End Function
 
+
+    Public Function GetSerialNumbers(ByVal stockId As Integer) As DataSet
+
+        Dim objDA As New DASerialNumberDelta
+        Dim ds As New DataSet
+
+        Try
+            ds = objDA.GetDataSetByStockId(stockId)
+
+        Catch ex As Exception
+            Throw New Exception(CLASSNAME & " - GetTCTxQueueByDate - " & ex.Message)
+        End Try
+
+        Return ds
+
+    End Function
+
 #End Region
 
 #Region " Insert Methods "
@@ -2254,6 +2275,8 @@ Public Class DataAccessNut
                 InsertTCTxQueue(invItemObj, guid, "", DATCTxQueue.CATEGORY_ITEM, DAInvoiceItem.TABLENAME, invItemObj.mUnitPriceQuoted * invItemObj.mTotalQty, DATCTxQueue.MODE_ADD)
 
                 objStock.UpdateStockBalance(invItemObj.stkId, invItemObj.mTotalQty)
+
+                'invItemObj.serialNumbers
             Next
 
             'Dim objPosDoclink As New DAPosDoclinkObject
@@ -2713,6 +2736,45 @@ Public Class DataAccessNut
 
         Catch ex As Exception
             Throw New Exception(CLASSNAME & " - InsertTCTxQueue - " & ex.Message)
+            Return False
+        End Try
+
+    End Function
+
+
+    Public Function InsertSerialNumberDelta(ByVal theSerial As String, ByVal invoiceItem As DAInvoiceItemObject, ByVal invoice As DAInvoiceObject) As Boolean
+
+        Try
+            Dim objDA As New DASerialNumberDelta
+            Dim obj As DASerialNumberDeltaObject
+
+            Dim sndObj As New DASerialNumberDeltaObject
+            sndObj.name_space = DASerialNumberDelta.NS_CUSTOMER
+            sndObj.txnType = DASerialNumberDelta.TT_SALES
+            sndObj.serialNumber = theSerial
+            sndObj.personInCharge = invoiceItem.mPic1
+            sndObj.itemId = invoiceItem.mItemId
+            sndObj.itemCode = invoiceItem.mItemCode
+            sndObj.quantity = -1
+            sndObj.currency = invoice.mCurrency
+            sndObj.unitPrice = invoiceItem.mUnitPriceQuoted
+            sndObj.txnTime = invoice.mTimeIssued
+            sndObj.remarks = invoiceItem.mRemarks
+            sndObj.entityTable = invoice.mEntityTable
+            sndObj.entityId = invoice.mEntityKey
+            sndObj.userIdEdit = invoice.mUserIdUpdate
+            sndObj.timeEdit = Now
+
+            obj = objDA.Create(sndObj)
+            If obj Is Nothing Then
+                Throw New Exception("Insert InsertSerialNumberDelta Failed!")
+                Return False
+            End If
+
+            Return True
+
+        Catch ex As Exception
+            Throw New Exception(CLASSNAME & " - InsertSerialNumberDelta - " & ex.Message)
             Return False
         End Try
 

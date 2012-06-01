@@ -42,7 +42,7 @@ Public Class frmMainMenu
 
     Private Sub Initialise()
         AssignValue(gGetLocale(Me.Name, "title"), Me.Text)
-        Me.Text &= " " & My.Application.Info.Version.ToString
+        Me.Text &= " " & My.Application.Info.Version.ToString(3)
         Messenger.Caption = Me.Text
         gSetLocaleChange(Me.Name, Me)
 

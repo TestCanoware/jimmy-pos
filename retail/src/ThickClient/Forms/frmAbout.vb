@@ -21,7 +21,7 @@ Public NotInheritable Class frmAbout
         ' TODO: Customize the application's assembly information in the "Application" pane of the project 
         '    properties dialog (under the "Project" menu).
         Me.lblProductName.Text = My.Application.Info.ProductName
-        Me.lblVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
+        Me.lblVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString(3))
         Me.lblCopyright.Text = My.Application.Info.Copyright
         Me.lblCompanyName.Text = My.Application.Info.CompanyName
         'Me.TextBoxDescription.Text = My.Application.Info.Description

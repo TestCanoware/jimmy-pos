@@ -264,6 +264,22 @@ Public Class frmMainThickClient
             End If
 
             If qty > 0 Then objDocRow.qty = qty
+
+            'Get Serialized item
+            'If (objDocRow.serialized) Then
+            '    Dim frm As New frmSelectSN
+            '    frm.stockId = objDocRow.stockId
+            '    If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+            '        For Each row As DataRowView In frm.lstSN.SelectedItems
+            '            objDocRow.arrSerials.Add(row("serial"))                        
+            '        Next
+            '        objDocRow.qty = objDocRow.arrSerials.Count
+            '    Else
+            '        Exit Sub
+            '    End If
+            'End If
+
+
             If price > 0 Then objDocRow.price = price
             If discPercentage > 0 AndAlso discPercentage <= 100 Then
                 If price > 0 Then
@@ -277,7 +293,7 @@ Public Class frmMainThickClient
                 objDocRow.discount = disc
             End If
 
-            objDocRow.remarks = cboSalesman.Text
+            objDocRow.remarks = cboSalesman.Text            
             AddItemWithDocRow(objDocRow)
 
             ' add to ArrayList DocRow
@@ -359,11 +375,14 @@ Public Class frmMainThickClient
                 dr.qty = qty
                 dr.remarks = remarks
 
-                item.SubItems(1).Text = objDocRow.itemCode & vbCrLf & objDocRow.itemName & " (" & objDocRow.remarks & ") "
+                Dim sn As String = Utils.General.GetCSV(objDocRow.arrSerials)
+                If sn.Length > 0 Then sn = "SN: " & sn
+
+                item.SubItems(1).Text = objDocRow.itemCode & vbCrLf & objDocRow.itemName & " (" & objDocRow.remarks & ") " & sn
                 item.SubItems(2).Text = dr.qty
-                item.SubItems(3).Text = FormatCurrency(dr.GetPriceStd)
-                item.SubItems(4).Text = FormatCurrency(dr.discount)
-                item.SubItems(5).Text = FormatCurrency(dr.GetAmount)
+                item.SubItems(3).Text = FormatCurrencyNoComma(dr.GetPriceStd)
+                item.SubItems(4).Text = FormatCurrencyNoComma(dr.discount)
+                item.SubItems(5).Text = FormatCurrencyNoComma(dr.GetAmount)
 
                 item.Tag = dr
 
@@ -380,14 +399,17 @@ Public Class frmMainThickClient
 
         txtItem.Text = objDocRow.itemCode
         txtQty.Text = objDocRow.qty
-        txtPrice.Text = FormatCurrency(objDocRow.price)
-        txtDisc.Text = FormatCurrency(objDocRow.discount)
+        txtPrice.Text = FormatCurrencyNoComma(objDocRow.price)
+        txtDisc.Text = FormatCurrencyNoComma(objDocRow.discount)
 
         ShowEditItemMenu(True)
 
     End Sub
 
     Private Sub DeleteItem()
+
+        If Not gLoadPermission(Permission.DeleteItem) Then Exit Sub
+
         objDocRow = SelectDocRow()
         If objDocRow Is Nothing Then Exit Sub
 
@@ -834,6 +856,9 @@ Public Class frmMainThickClient
     End Function
 
     Public Sub CancelInvoice()
+
+        If Not gLoadPermission(Permission.CancelSale) Then Exit Sub
+
         If Not gShowMsgVoidConfirm() Then Exit Sub
 
         Dim frm As New frmRemark
@@ -1176,7 +1201,9 @@ Public Class frmMainThickClient
     Private Sub ReportsItemClick()
         If HasItems() Then Exit Sub
 
-        ShowMenu(2)
+        If gLoadPermission(Permission.ViewReport) Then
+            ShowMenu(2)
+        End If
     End Sub
 
     Private Sub EndDayClosingClickItem()
@@ -1478,11 +1505,13 @@ Public Class frmMainThickClient
 
         Select Case frmMode
             Case FormMode.MAIN
-                Dim frm As New frmCashInOut
-                If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
-                    Dim pkid As Integer = 0
-                    InsertCashInOut(frm.txtTotal.Text.Trim, frm.txtRemarks.Text, frm.cboType.Text, pkid)
-                    gShowReport(New rptCashInOut(pkid), True)
+                If gLoadPermission(Permission.CashInOut) Then
+                    Dim frm As New frmCashInOut
+                    If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+                        Dim pkid As Integer = 0
+                        InsertCashInOut(frm.txtTotal.Text.Trim, frm.txtRemarks.Text, frm.cboType.Text, pkid)
+                        gShowReport(New rptCashInOut(pkid), True)
+                    End If
                 End If
 
             Case FormMode.CASHSALE_VIEW
@@ -1578,7 +1607,7 @@ Public Class frmMainThickClient
 
         Catch ex As Exception
             Messenger.Caption = Me.Text & " - Add FOC Item Error"
-            Messenger.ShowError(ex.Message)            
+            Messenger.ShowError(ex.Message)
         End Try
     End Sub
 
@@ -1871,12 +1900,15 @@ Public Class frmMainThickClient
         Dim subitem4 As New GlacialComponents.Controls.GLSubItem
         Dim subitem5 As New GlacialComponents.Controls.GLSubItem
 
+        Dim sn As String = Utils.General.GetCSV(objDocRow.arrSerials)
+        If sn.Length > 0 Then sn = "SN: " & sn
+
         item.Text = GlacialList1.Count + 1
-        subitem1.Text = objDocRow.itemCode & vbCrLf & objDocRow.itemName & " (" & objDocRow.remarks & ") "
+        subitem1.Text = objDocRow.itemCode & vbCrLf & objDocRow.itemName & " (" & objDocRow.remarks & ") " & sn
         subitem2.Text = objDocRow.qty
-        subitem3.Text = FormatCurrency(objDocRow.GetPriceStd)
-        subitem4.Text = FormatCurrency(objDocRow.discount)
-        subitem5.Text = FormatCurrency(objDocRow.GetAmount)
+        subitem3.Text = FormatCurrencyNoComma(objDocRow.GetPriceStd)
+        subitem4.Text = FormatCurrencyNoComma(objDocRow.discount)
+        subitem5.Text = FormatCurrencyNoComma(objDocRow.GetAmount)
 
         item.Tag = objDocRow
         item.SubItems.AddRange(New GlacialComponents.Controls.GLSubItem() {subitem1, subitem2, subitem3, subitem4, subitem5})
@@ -1899,11 +1931,14 @@ Public Class frmMainThickClient
         Dim item As New GlacialComponents.Controls.GLItem
         item = GlacialList1.SelectedItems(0)
 
-        item.SubItems(1).Text = objDocRow.itemCode & vbCrLf & objDocRow.itemName & " (" & objDocRow.remarks & ") "
+        Dim sn As String = Utils.General.GetCSV(objDocRow.arrSerials)
+        If sn.Length > 0 Then sn = "SN: " & sn
+
+        item.SubItems(1).Text = objDocRow.itemCode & vbCrLf & objDocRow.itemName & " (" & objDocRow.remarks & ") " & sn
         item.SubItems(2).Text = objDocRow.qty
-        item.SubItems(3).Text = FormatCurrency(objDocRow.GetPriceStd)
-        item.SubItems(4).Text = FormatCurrency(objDocRow.discount)
-        item.SubItems(5).Text = FormatCurrency(objDocRow.GetAmount)
+        item.SubItems(3).Text = FormatCurrencyNoComma(objDocRow.GetPriceStd)
+        item.SubItems(4).Text = FormatCurrencyNoComma(objDocRow.discount)
+        item.SubItems(5).Text = FormatCurrencyNoComma(objDocRow.GetAmount)
 
         item.Tag = objDocRow
 
