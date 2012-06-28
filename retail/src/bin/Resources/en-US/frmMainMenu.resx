@@ -120,6 +120,33 @@
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Thick Client Portal</value>
   </data>
+  <data name="modAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="modConfig" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="modDeposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="modDepositRefund" xml:space="preserve">
+    <value>Deposit Refund</value>
+  </data>
+  <data name="modExit" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="modJobsheet" xml:space="preserve">
+    <value>Create Jobsheet</value>
+  </data>
+  <data name="modJobsheetEdit" xml:space="preserve">
+    <value>Edit Jobsheet</value>
+  </data>
+  <data name="modPOS" xml:space="preserve">
+    <value>Point Of Sales</value>
+  </data>
+  <data name="modReport" xml:space="preserve">
+    <value>Reports</value>
+  </data>
   <data name="stReady.Text" xml:space="preserve">
     <value>Ready</value>
   </data>

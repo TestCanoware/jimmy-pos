@@ -531,10 +531,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmAbout.resx">
+    <Resource Include="Forms\frmAbout.resx">
       <DependentUpon>frmAbout.vb</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
+    </Resource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -850,6 +850,7 @@
     <Content Include="Resources\coins.png" />
     <Content Include="Resources\coins1.png" />
     <Content Include="Resources\Config.png" />
+    <None Include="Resources\Configuration.png" />
     <Content Include="Resources\DailySalesReport.PNG" />
     <Content Include="Resources\Delete_32x32.png" />
     <Content Include="Resources\DetailedVoidReport.PNG" />

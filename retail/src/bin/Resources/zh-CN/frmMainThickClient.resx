@@ -195,6 +195,9 @@
   <data name="btnSaleHistory.Text" xml:space="preserve">
     <value>销售历史记录</value>
   </data>
+  <data name="btnSalesperson.Text" xml:space="preserve">
+    <value>销售人员</value>
+  </data>
   <data name="btnUpdateItem.Text" xml:space="preserve">
     <value>更新商品</value>
   </data>
@@ -326,6 +329,9 @@
   </data>
   <data name="tbReports.Text" xml:space="preserve">
     <value>报表 (F7)</value>
+  </data>
+  <data name="tbSummaryStockSoldReport.Text" xml:space="preserve">
+    <value>摘要股票出售 (F7)</value>
   </data>
   <data name="tbSync.Text" xml:space="preserve">
     <value>同步 (F12)</value>

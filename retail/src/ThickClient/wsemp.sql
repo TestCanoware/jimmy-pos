@@ -18,8 +18,8 @@
 -- Create schema wsemp
 --
 
-CREATE DATABASE IF NOT EXISTS wsemp;
-USE wsemp;
+-- CREATE DATABASE IF NOT EXISTS wsemp;
+-- USE wsemp;
 
 --
 -- Definition of table `acc_branch_index`

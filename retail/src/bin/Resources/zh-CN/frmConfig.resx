@@ -123,20 +123,41 @@
   <data name="btnBrowse.Text" xml:space="preserve">
     <value>浏览</value>
   </data>
+  <data name="btnBrowseExport.Text" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="btnBrowseImport.Text" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
   </data>
-  <data name="btnGetBranch.Text" xml:space="preserve">
-    <value>获取网点</value>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>立即下载</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>出口</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>导入</value>
   </data>
   <data name="btnOk.Text" xml:space="preserve">
     <value>确定</value>
   </data>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>启动</value>
+  <data name="btnRetrieve.Text" xml:space="preserve">
+    <value>检索</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>手动上载</value>
   </data>
   <data name="chkAddNewLine.Text" xml:space="preserve">
     <value>删除商品时添加线</value>
+  </data>
+  <data name="chkApplyFiveCent.Text" xml:space="preserve">
+    <value>适用 5%的概念</value>
+  </data>
+  <data name="chkAutoSynchronize.Text" xml:space="preserve">
+    <value>自动上传</value>
   </data>
   <data name="chkConfirmDelete.Text" xml:space="preserve">
     <value>删除商品确认</value>
@@ -174,8 +195,14 @@
   <data name="chkSucceedVoid.Text" xml:space="preserve">
     <value>撤销成功</value>
   </data>
-  <data name="lblAutoSync.Text" xml:space="preserve">
-    <value>自动同步</value>
+  <data name="chkUploadByLimit.Text" xml:space="preserve">
+    <value>通过限制上载</value>
+  </data>
+  <data name="grpExport.Text" xml:space="preserve">
+    <value>出口事务队列</value>
+  </data>
+  <data name="grpImport.Text" xml:space="preserve">
+    <value>EMP 的导入主数据</value>
   </data>
   <data name="lblBranch.Text" xml:space="preserve">
     <value>分店</value>
@@ -183,8 +210,47 @@
   <data name="lblCurrentSysLocale.Text" xml:space="preserve">
     <value>当前的系统区域</value>
   </data>
+  <data name="lblDailySalesReport.Text" xml:space="preserve">
+    <value>每日销售报告</value>
+  </data>
   <data name="lblDatabaseHost.Text" xml:space="preserve">
     <value>数据库主机</value>
+  </data>
+  <data name="lblDateFrom.Text" xml:space="preserve">
+    <value>从日期</value>
+  </data>
+  <data name="lblDateTo.Text" xml:space="preserve">
+    <value>将日期</value>
+  </data>
+  <data name="lblDownload.Text" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="lblEnd.Text" xml:space="preserve">
+    <value>lblEnd</value>
+  </data>
+  <data name="lblEndTime.Text" xml:space="preserve">
+    <value>结束时间</value>
+  </data>
+  <data name="lblExportDateMsg.Text" xml:space="preserve">
+    <value>如果未选中日期，则将导出尚未导出之前的所有交易记录。</value>
+  </data>
+  <data name="lblExportFile.Text" xml:space="preserve">
+    <value>文件：</value>
+  </data>
+  <data name="lblExportMsg.Text" xml:space="preserve">
+    <value>lblExportMsg</value>
+  </data>
+  <data name="lblImportFile.Text" xml:space="preserve">
+    <value>文件：</value>
+  </data>
+  <data name="lblImportMsg.Text" xml:space="preserve">
+    <value>lblImportMsg</value>
+  </data>
+  <data name="lblItemCode.Text" xml:space="preserve">
+    <value>项目代码</value>
+  </data>
+  <data name="lblLogo.Text" xml:space="preserve">
+    <value>徽标</value>
   </data>
   <data name="lblMessage1.Text" xml:space="preserve">
     <value>消息1</value>
@@ -204,8 +270,20 @@
   <data name="lblPriceSchema.Text" xml:space="preserve">
     <value>价格计划</value>
   </data>
-  <data name="lblSyncBranch.Text" xml:space="preserve">
-    <value>分店</value>
+  <data name="lblPrinterSetup.Text" xml:space="preserve">
+    <value>打印机设置</value>
+  </data>
+  <data name="lblReceipt.Text" xml:space="preserve">
+    <value>回执</value>
+  </data>
+  <data name="lblStart.Text" xml:space="preserve">
+    <value>lblStart</value>
+  </data>
+  <data name="lblStartTime.Text" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="lblStockSummarySoldReport.Text" xml:space="preserve">
+    <value>股票出售报告的摘要</value>
   </data>
   <data name="lblSyncTiming.Text" xml:space="preserve">
     <value>同步时间</value>
@@ -222,17 +300,23 @@
   <data name="lblTransaction.Text" xml:space="preserve">
     <value>交易</value>
   </data>
-  <data name="lblWebService.Text" xml:space="preserve">
-    <value>网络服务</value>
+  <data name="lblUpload.Text" xml:space="preserve">
+    <value>上传</value>
   </data>
   <data name="lblWelcomeTo.Text" xml:space="preserve">
     <value>欢迎</value>
+  </data>
+  <data name="tbImportExport.Text" xml:space="preserve">
+    <value>导入和导出</value>
   </data>
   <data name="tbMessageSetup.Text" xml:space="preserve">
     <value>消息设置</value>
   </data>
   <data name="tbOthers.Text" xml:space="preserve">
     <value>其他</value>
+  </data>
+  <data name="tbPrintable.Text" xml:space="preserve">
+    <value>可打印</value>
   </data>
   <data name="tbReceiptBottomMsg.Text" xml:space="preserve">
     <value>收据底部消息</value>

@@ -117,7 +117,7 @@ Partial Class frmMainMenu
         '
         Me.stReady.Name = "stReady"
         Me.stReady.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
-        Me.stReady.Size = New System.Drawing.Size(233, 17)
+        Me.stReady.Size = New System.Drawing.Size(264, 17)
         Me.stReady.Spring = True
         Me.stReady.Text = "Ready"
         '

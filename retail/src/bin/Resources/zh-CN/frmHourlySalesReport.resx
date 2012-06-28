@@ -126,11 +126,11 @@
   <data name="lblCashier.Text" xml:space="preserve">
     <value>收银员：</value>
   </data>
-  <data name="lblPosId.Text" xml:space="preserve">
-    <value>POS号码：</value>
-  </data>
   <data name="lblDate.Text" xml:space="preserve">
     <value>日期：</value>
+  </data>
+  <data name="lblPosId.Text" xml:space="preserve">
+    <value>POS号码：</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>实时销售报告</value>

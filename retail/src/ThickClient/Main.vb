@@ -1,3 +1,4 @@
+Imports MySql.Data.MySqlClient
 Imports System.Configuration
 Imports Utils
 Imports Utils.General
@@ -12,8 +13,34 @@ Module Main
         Application.EnableVisualStyles()
         Application.DoEvents()
 
-        If GetAppSettingKey(gAPP_KEY_THICK_CLIENT_IS_INSTALL) <> "1" Then
+        ' Check exist database
+        Dim isCreateNewDB As Boolean = False
+        Dim config As New SysConfig
+
+        Try
+            Dim comm As New DataAccess.Commands
+            comm.ConnectDatabase()
+
+        Catch ex As MySqlException
+            '1042 - cannot connect MySQL server
+            '1045 - password not correct
+            '1049 - database not correct
+            If (ex.Number = 1049) Then
+                If Messenger.ShowQuestion(ex.Message & vbCrLf & "Do you want to create database '" & config.DB & "'?", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+                    isCreateNewDB = True
+                Else
+                    Exit Sub
+                End If
+            Else
+                Messenger.ShowError(ex)
+                Exit Sub
+            End If
+        End Try
+        
+
+        If isCreateNewDB Then
             Dim frm As New frmInstallation
+            frm.database = config.DB
             If Not frm.ShowDialog() = DialogResult.OK Then
                 Exit Sub
             End If

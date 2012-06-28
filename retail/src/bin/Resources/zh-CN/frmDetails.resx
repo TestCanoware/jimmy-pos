@@ -120,14 +120,8 @@
   <data name="btnOk.Text" xml:space="preserve">
     <value>确定</value>
   </data>
-  <data name="lblBillingHandphone.Text" xml:space="preserve">
-    <value>付费手机</value>
-  </data>
   <data name="lblRemarks.Text" xml:space="preserve">
     <value>备注</value>
-  </data>
-  <data name="lblTrackingNo.Text" xml:space="preserve">
-    <value>跟踪编号</value>
   </data>
   <data name="title" xml:space="preserve">
     <value>详细信息</value>

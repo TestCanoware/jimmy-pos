@@ -1,5 +1,9 @@
 What's new in the latest version
 
+Version 2.1.23
+1. Add some missing resource bundle
+2. Add check connection server > if not database exist, only popup setup databse wizard.
+
 Version 2.1.22
 1. Requires EMP Server 2.1/13625 or later
 2. Change export transaction queue format like csv at Configuration > Import And Export

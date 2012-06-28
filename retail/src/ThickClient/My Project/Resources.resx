@@ -121,6 +121,9 @@
   <data name="Search_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Reports.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="New_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +160,8 @@
   <data name="Next_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Next_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kbd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kbd.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search-32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,11 +175,11 @@
   <data name="DirectionFirst16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DirectionFirst16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Delete_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="visa_logo_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visa_logo_7.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Purse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Purse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lock_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +208,9 @@
   <data name="DailySalesReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DailySalesReport.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ball.red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ball.red.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shopping-cart-down-32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart-down-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,6 +223,9 @@
   <data name="Portfolio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Portfolio.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NetsCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NetsCard.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Money.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -226,8 +235,8 @@
   <data name="Add_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Export16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Export16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="invoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invoice.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="New_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,26 +250,23 @@
   <data name="Synchronize_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Synchronize_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Keyboard-icon-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Keyboard-icon-48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="shopping-cart-32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search-32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Export16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoidReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoidReport.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kbd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kbd.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Keyboard-icon64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Keyboard-icon64.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Reports.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Purse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Purse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="JCB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JCB.jpeg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,17 +304,14 @@
   <data name="ViewRuler16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ViewRuler16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow.small.leftT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow.small.leftT.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Lesud_Icons_Set_01_PC-Text editor-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lesud_Icons_Set_01_PC-Text editor-4.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ball.red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ball.red.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Keyboard-icon-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Keyboard-icon-48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="invoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\invoice.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow.small.leftT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow.small.leftT.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HourlySalesReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HourlySalesReport.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,7 +319,7 @@
   <data name="OfficialReceiptListing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OfficialReceiptListing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NetsCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NetsCard.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Configuration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Configuration.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

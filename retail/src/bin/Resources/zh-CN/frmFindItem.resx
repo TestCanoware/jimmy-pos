@@ -126,6 +126,9 @@
   <data name="btnSearch.Text" xml:space="preserve">
     <value>搜索</value>
   </data>
+  <data name="colEAN.Text" xml:space="preserve">
+    <value>EAN 代码</value>
+  </data>
   <data name="colItemCode.Text" xml:space="preserve">
     <value>商品代码</value>
   </data>

@@ -195,6 +195,9 @@
   <data name="btnSaleHistory.Text" xml:space="preserve">
     <value>SALE HISTORY</value>
   </data>
+  <data name="btnSalesperson.Text" xml:space="preserve">
+    <value>SALESPERSON</value>
+  </data>
   <data name="btnUpdateItem.Text" xml:space="preserve">
     <value>UPDATE ITEM</value>
   </data>
@@ -326,6 +329,9 @@
   </data>
   <data name="tbReports.Text" xml:space="preserve">
     <value>Reports (F7)</value>
+  </data>
+  <data name="tbSummaryStockSoldReport.Text" xml:space="preserve">
+    <value>Summary Stock Sold (F7)</value>
   </data>
   <data name="tbSync.Text" xml:space="preserve">
     <value>Sync (F12)</value>

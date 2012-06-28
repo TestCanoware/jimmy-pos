@@ -4,6 +4,8 @@ Imports System.IO
 
 Public Class frmInstallation
 
+    Public database As String = "wsemp"
+
     Private Sub btnAttach_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAttach.Click
 
         Dim cursors As New WaitCursor
@@ -16,9 +18,12 @@ Public Class frmInstallation
             Dim comm As New DataAccess.Commands
             comm.ConnectDatabase("mysql")
 
+            strSQL = "CREATE DATABASE IF NOT EXISTS " & database & ";" & _
+                     "USE " & database & ";" & strSQL
+
             comm.ExecuteNonQuery(strSQL)
 
-            General.SetAppSettingKey(gAPP_KEY_THICK_CLIENT_IS_INSTALL, 1)
+            'General.SetAppSettingKey(gAPP_KEY_THICK_CLIENT_IS_INSTALL, 1)
 
             Messenger.ShowInformation("Application is successfully installed.")
 

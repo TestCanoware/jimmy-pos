@@ -130,6 +130,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property Configuration() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Configuration", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property DailySalesReport() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("DailySalesReport", resourceCulture)

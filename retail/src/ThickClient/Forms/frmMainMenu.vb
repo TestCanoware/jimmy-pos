@@ -7,15 +7,15 @@ Public Class frmMainMenu
 
     Private FORMTITLE As String = My.Application.Info.Title
 
-    Private Const MODULE_POS = "Point Of Sales"
-    Private Const MODULE_JOBSHEET = "Create Jobsheet"
-    Private Const MODULE_JOBSHEET_EDIT = "Edit Jobsheet"
-    Private Const MODULE_DEPOSIT = "Deposit"
-    Private Const MODULE_PAYMENT_VOUCHER = "Deposit Refund"
-    Private Const MODULE_REPORT = "Reports"
-    Private Const MODULE_CONFIG = "Configuration"
-    Private Const MODULE_ABOUT = "About"
-    Private Const MODULE_EXIT = "Logout"
+    Private MODULE_POS As String = "Point Of Sales"
+    Private MODULE_JOBSHEET As String = "Create Jobsheet"
+    Private MODULE_JOBSHEET_EDIT As String = "Edit Jobsheet"
+    Private MODULE_DEPOSIT As String = "Deposit"
+    Private MODULE_DEPOSIT_REFUND As String = "Deposit Refund"
+    Private MODULE_REPORT As String = "Reports"
+    Private MODULE_CONFIG As String = "Configuration"
+    Private MODULE_ABOUT As String = "About"
+    Private MODULE_EXIT As String = "Logout"
 
     Private running As Boolean = False
 
@@ -45,6 +45,16 @@ Public Class frmMainMenu
         Me.Text &= " " & My.Application.Info.Version.ToString(3)
         Messenger.Caption = Me.Text
         gSetLocaleChange(Me.Name, Me)
+
+        AssignValue(gGetLocale(Me.Name, "modPOS"), MODULE_POS)
+        AssignValue(gGetLocale(Me.Name, "modJobsheet"), MODULE_JOBSHEET)
+        AssignValue(gGetLocale(Me.Name, "modJobsheetEdit"), MODULE_JOBSHEET_EDIT)
+        AssignValue(gGetLocale(Me.Name, "modDeposit"), MODULE_DEPOSIT)
+        AssignValue(gGetLocale(Me.Name, "modDepositRefund"), MODULE_DEPOSIT_REFUND)
+        AssignValue(gGetLocale(Me.Name, "modReport"), MODULE_REPORT)
+        AssignValue(gGetLocale(Me.Name, "modConfig"), MODULE_CONFIG)
+        AssignValue(gGetLocale(Me.Name, "modAbout"), MODULE_ABOUT)
+        AssignValue(gGetLocale(Me.Name, "modExit"), MODULE_EXIT)
 
         General.CursorButtons(Me, Cursors.Hand)
 
@@ -78,7 +88,7 @@ Public Class frmMainMenu
             .Items(1).Text = MODULE_JOBSHEET
             .Items(2).Text = MODULE_JOBSHEET_EDIT
             '.Items(3).Text = MODULE_DEPOSIT
-            .Items(3).Text = MODULE_PAYMENT_VOUCHER
+            .Items(3).Text = MODULE_DEPOSIT_REFUND
             '.Items(5).Text = MODULE_REPORT
             .Items(4).Text = MODULE_CONFIG
             .Items(5).Text = MODULE_ABOUT
@@ -129,7 +139,7 @@ Public Class frmMainMenu
             Case MODULE_DEPOSIT
                 RunForm(New frmDepositList)
 
-            Case MODULE_PAYMENT_VOUCHER
+            Case MODULE_DEPOSIT_REFUND
                 RunForm(New frmPaymentVoucher)
 
             Case MODULE_REPORT

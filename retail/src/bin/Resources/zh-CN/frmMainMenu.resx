@@ -120,6 +120,33 @@
   <data name="lblTitle.Text" xml:space="preserve">
     <value>POS系统</value>
   </data>
+  <data name="modAbout" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="modConfig" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="modDeposit" xml:space="preserve">
+    <value>存款</value>
+  </data>
+  <data name="modDepositRefund" xml:space="preserve">
+    <value>退还押金</value>
+  </data>
+  <data name="modExit" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="modJobsheet" xml:space="preserve">
+    <value>创建 Jobsheet</value>
+  </data>
+  <data name="modJobsheetEdit" xml:space="preserve">
+    <value>编辑 Jobsheet</value>
+  </data>
+  <data name="modPOS" xml:space="preserve">
+    <value>销售点</value>
+  </data>
+  <data name="modReport" xml:space="preserve">
+    <value>报告</value>
+  </data>
   <data name="stReady.Text" xml:space="preserve">
     <value>准备</value>
   </data>
