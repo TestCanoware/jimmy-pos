@@ -216,6 +216,9 @@
   <data name="colNo.Text" xml:space="preserve">
     <value>号码</value>
   </data>
+  <data name="colPrice.Text" xml:space="preserve">
+    <value>价格</value>
+  </data>
   <data name="colQty.Text" xml:space="preserve">
     <value>数量</value>
   </data>

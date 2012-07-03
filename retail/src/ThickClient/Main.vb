@@ -49,8 +49,9 @@ Module Main
 
 
         Try
-            gSysConfig = New Utils.SysConfig
+            gSysConfig = New Utils.SysConfig            
             gLoadAppConfig()
+            gLoadGlobalResource()
 
         Catch ex As Exception
             Messenger.ShowError(ex)

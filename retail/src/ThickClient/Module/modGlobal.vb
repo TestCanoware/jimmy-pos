@@ -10,21 +10,23 @@ Imports System.IO
 Module modGlobal
 
     Public Const gSTART_DATE = "2001-01-01"
-    Public Const gMSG_ITEM_NOT_FOUND = "Item not found or below qty!"
-    Public Const gMSG_LOGOUT = "Are you sure to Logout the system?"
-    Public Const gMSG_CHECK_CURRENT_DATE = "Please check the current date and time!"
-    Public Const gMSG_LOGIN_NOT_SUCCEED = "You could not be authenticated!"
-    Public Const gMSG_ENTER_REMARKS = "Please enter the remarks!"
-    Public Const gMSG_REMOVE_DEPOSIT = "Are you sure to remove selected records?"
-    Public Const gMSG_REFUND = "Do you want to refund?"
-    Public Const gMSG_TRANSACTION_EXIST = "Transaction exist!"
-    Public Const gMSG_TRANSACTION_NOT_EXIST = "No Transaction exist!"
-    Public Const gMSG_AUTO_SYNC = "Auto Synchronize exist!"
-    Public Const gMSG_EXCHANGE_ITEM_PIRCE = "The exchanged item's price needs to be equal or less than of this transaction's"
-    Public Const gMSG_HELD_ITEMS_DETECTED = "Held items detected!"
-    Public Const gMSG_IMPORT_SUCCESSFULLY = "Import successfully!"
-    Public Const gMSG_EXPORT_SUCCESSFULLY = "Export successfully!"
-    Public Const gMSG_NO_EXPORT_TRANSACTIONS = "All transactions has been exported, there's no more transactions pending export!"
+
+    'Global Resource
+    Public gMSG_ITEM_NOT_FOUND As String = "Item not found or below qty!"
+    Public gMSG_LOGOUT As String = "Are you sure to Logout the system?"
+    Public gMSG_CHECK_CURRENT_DATE As String = "Please check the current date and time!"
+    Public gMSG_LOGIN_NOT_SUCCEED As String = "You could not be authenticated!"
+    Public gMSG_ENTER_REMARKS As String = "Please enter the remarks!"
+    Public gMSG_REMOVE_DEPOSIT As String = "Are you sure to remove selected records?"
+    Public gMSG_REFUND As String = "Do you want to refund?"
+    Public gMSG_TRANSACTION_EXIST As String = "Transaction exist!"
+    Public gMSG_TRANSACTION_NOT_EXIST As String = "No Transaction exist!"
+    Public gMSG_AUTO_SYNC As String = "Auto Synchronize exist!"
+    Public gMSG_EXCHANGE_ITEM_PIRCE As String = "The exchanged item's price needs to be equal or less than of this transaction's"
+    Public gMSG_HELD_ITEMS_DETECTED As String = "Held items detected!"
+    Public gMSG_IMPORT_SUCCESSFULLY As String = "Import successfully!"
+    Public gMSG_EXPORT_SUCCESSFULLY As String = "Export successfully!"
+    Public gMSG_NO_EXPORT_TRANSACTIONS As String = "All transactions has been exported, there's no more transactions pending export!"
 
     'Public Const gMSG_NEW_DEPOSIT = "Are you sure to Create New Deposit?"
     Public Const gAPP_KEY_THICK_CLIENT_IS_INSTALL = "ThickClientIsInstall"
@@ -124,6 +126,24 @@ Module modGlobal
 
     End Structure
 
+    Public Sub gLoadGlobalResource()
+        AssignValue(gGetLocale("Global", "msg_auto_sync"), gMSG_AUTO_SYNC)
+        AssignValue(gGetLocale("Global", "msg_check_current_date"), gMSG_CHECK_CURRENT_DATE)
+        AssignValue(gGetLocale("Global", "msg_enter_remakrs"), gMSG_ENTER_REMARKS)
+        AssignValue(gGetLocale("Global", "msg_exchange_item"), gMSG_EXCHANGE_ITEM_PIRCE)
+        AssignValue(gGetLocale("Global", "msg_export_successfully"), gMSG_EXPORT_SUCCESSFULLY)
+        AssignValue(gGetLocale("Global", "msg_held_items_detected"), gMSG_HELD_ITEMS_DETECTED)
+        AssignValue(gGetLocale("Global", "msg_import_successfully"), gMSG_IMPORT_SUCCESSFULLY)
+        AssignValue(gGetLocale("Global", "msg_item_not_found"), gMSG_ITEM_NOT_FOUND)
+        AssignValue(gGetLocale("Global", "msg_login_not_succed"), gMSG_LOGIN_NOT_SUCCEED)
+        AssignValue(gGetLocale("Global", "msg_logout"), gMSG_LOGOUT)
+        AssignValue(gGetLocale("Global", "msg_no_export_transaction"), gMSG_NO_EXPORT_TRANSACTIONS)
+        AssignValue(gGetLocale("Global", "msg_refund"), gMSG_REFUND)
+        AssignValue(gGetLocale("Global", "msg_remove_deposit "), gMSG_REMOVE_DEPOSIT)
+        AssignValue(gGetLocale("Global", "msg_transaction_exist"), gMSG_TRANSACTION_EXIST)
+        AssignValue(gGetLocale("Global", "msg_transaction_not_exist"), gMSG_TRANSACTION_NOT_EXIST)
+        
+    End Sub
 
     Public Sub gLoadAppConfig()
 

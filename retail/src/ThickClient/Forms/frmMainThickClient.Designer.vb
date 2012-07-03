@@ -442,7 +442,7 @@ Partial Class frmMainThickClient
         GlColumn2.NumericSort = False
         GlColumn2.Text = "Item"
         GlColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GlColumn2.Width = 158
+        GlColumn2.Width = 153
         GlColumn3.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None
         GlColumn3.CheckBoxes = False
         GlColumn3.ImageIndex = -1
@@ -466,7 +466,7 @@ Partial Class frmMainThickClient
         GlColumn5.NumericSort = False
         GlColumn5.Text = "Disc$  "
         GlColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GlColumn5.Width = 50
+        GlColumn5.Width = 55
         GlColumn6.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None
         GlColumn6.CheckBoxes = False
         GlColumn6.ImageIndex = -1

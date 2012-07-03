@@ -216,6 +216,9 @@
   <data name="colNo.Text" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="colPrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
   <data name="colQty.Text" xml:space="preserve">
     <value>Qty</value>
   </data>

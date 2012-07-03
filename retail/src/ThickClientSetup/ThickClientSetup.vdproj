@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0C30887863BC446FB31E65662C1EB548"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0DA4313C2CA240C7AB7AE62128FA5194"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -561,6 +567,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D5E03CA6424C4BEDA443F43ECDBE7BDE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DA6A322760134474845ABAA8B155804E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -908,6 +920,26 @@
             "TargetName" = "8:frmGoodsExchange.resx"
             "Tag" = "8:"
             "Folder" = "8:_BB8013B4DA9345F18841A264BB7C054D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0C30887863BC446FB31E65662C1EB548"
+            {
+            "SourcePath" = "8:..\\bin\\Resources\\zh-CN\\Global.resx"
+            "TargetName" = "8:Global.resx"
+            "Tag" = "8:"
+            "Folder" = "8:_DDBA8C961D604A7DB9A122C49499F677"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2627,6 +2659,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D5E03CA6424C4BEDA443F43ECDBE7BDE"
+            {
+            "SourcePath" = "8:..\\bin\\Resources\\en-US\\Global.resx"
+            "TargetName" = "8:Global.resx"
+            "Tag" = "8:"
+            "Folder" = "8:_BB8013B4DA9345F18841A264BB7C054D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DA6A322760134474845ABAA8B155804E"
             {
             "SourcePath" = "8:..\\bin\\Resources\\zh-CN\\frmMainMenu.resx"
@@ -3092,7 +3144,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Thick Client 2.1.23"
         "ProductCode" = "8:{064FEE5D-E787-4DDD-86A2-07FC05E03B11}"
-        "PackageCode" = "8:{6485094B-C3C6-4935-887E-C74BA5C1AC2D}"
+        "PackageCode" = "8:{A66229AA-3C20-4EA2-8B69-3B88959D13DC}"
         "UpgradeCode" = "8:{C7AFB154-A7B9-4D48-8B9F-2299744358F7}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
