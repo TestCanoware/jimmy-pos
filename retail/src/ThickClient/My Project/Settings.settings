@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
-  <Profiles />
-  <Settings>
-    <Setting Name="ThickClient_EMPThickClientWebReference_EMPThickClientService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://192.168.0.77:8080/ws/EMPThickClientService</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>

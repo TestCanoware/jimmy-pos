@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.0.77:8080/ws/EMPThickClientService?xsd=1" filename="EMPThickClientService.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://192.168.0.77:8080/ws/EMPThickClientService?wsdl" filename="EMPThickClientService.wsdl" />
-  </Results>
-</DiscoveryClientResultsFile>
