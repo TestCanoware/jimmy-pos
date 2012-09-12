@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://thickclient.wavelet.webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EMPThickClientService" targetNamespace="http://thickclient.wavelet.webservices/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://192.168.0.77:8080/ws/EMPThickClientService?xsd=1" namespace="http://thickclient.wavelet.webservices/" />
+    </xsd:schema>
+  </types>
+  <message name="getAuthenticate">
+    <part name="parameters" element="tns:getAuthenticate" />
+  </message>
+  <message name="getAuthenticateResponse">
+    <part name="parameters" element="tns:getAuthenticateResponse" />
+  </message>
+  <message name="getNextBranch">
+    <part name="parameters" element="tns:getNextBranch" />
+  </message>
+  <message name="getNextBranchResponse">
+    <part name="parameters" element="tns:getNextBranchResponse" />
+  </message>
+  <message name="getNextUser">
+    <part name="parameters" element="tns:getNextUser" />
+  </message>
+  <message name="getNextUserResponse">
+    <part name="parameters" element="tns:getNextUserResponse" />
+  </message>
+  <message name="getNextItem">
+    <part name="parameters" element="tns:getNextItem" />
+  </message>
+  <message name="getNextItemResponse">
+    <part name="parameters" element="tns:getNextItemResponse" />
+  </message>
+  <message name="getNextStock">
+    <part name="parameters" element="tns:getNextStock" />
+  </message>
+  <message name="getNextStockResponse">
+    <part name="parameters" element="tns:getNextStockResponse" />
+  </message>
+  <message name="getNextCashAccount">
+    <part name="parameters" element="tns:getNextCashAccount" />
+  </message>
+  <message name="getNextCashAccountResponse">
+    <part name="parameters" element="tns:getNextCashAccountResponse" />
+  </message>
+  <message name="getNextCustAccount">
+    <part name="parameters" element="tns:getNextCustAccount" />
+  </message>
+  <message name="getNextCustAccountResponse">
+    <part name="parameters" element="tns:getNextCustAccountResponse" />
+  </message>
+  <message name="getNextCustUser">
+    <part name="parameters" element="tns:getNextCustUser" />
+  </message>
+  <message name="getNextCustUserResponse">
+    <part name="parameters" element="tns:getNextCustUserResponse" />
+  </message>
+  <message name="getNextSuppAccount">
+    <part name="parameters" element="tns:getNextSuppAccount" />
+  </message>
+  <message name="getNextSuppAccountResponse">
+    <part name="parameters" element="tns:getNextSuppAccountResponse" />
+  </message>
+  <message name="insertNextTransaction">
+    <part name="parameters" element="tns:insertNextTransaction" />
+  </message>
+  <message name="insertNextTransactionResponse">
+    <part name="parameters" element="tns:insertNextTransactionResponse" />
+  </message>
+  <message name="getNextCategoryTree">
+    <part name="parameters" element="tns:getNextCategoryTree" />
+  </message>
+  <message name="getNextCategoryTreeResponse">
+    <part name="parameters" element="tns:getNextCategoryTreeResponse" />
+  </message>
+  <message name="getNextCardPaymentConfig">
+    <part name="parameters" element="tns:getNextCardPaymentConfig" />
+  </message>
+  <message name="getNextCardPaymentConfigResponse">
+    <part name="parameters" element="tns:getNextCardPaymentConfigResponse" />
+  </message>
+  <message name="getNextTaxConfig">
+    <part name="parameters" element="tns:getNextTaxConfig" />
+  </message>
+  <message name="getNextTaxConfigResponse">
+    <part name="parameters" element="tns:getNextTaxConfigResponse" />
+  </message>
+  <message name="getNextSerialNumberDelta">
+    <part name="parameters" element="tns:getNextSerialNumberDelta" />
+  </message>
+  <message name="getNextSerialNumberDeltaResponse">
+    <part name="parameters" element="tns:getNextSerialNumberDeltaResponse" />
+  </message>
+  <message name="getNextOfficialReceipt">
+    <part name="parameters" element="tns:getNextOfficialReceipt" />
+  </message>
+  <message name="getNextOfficialReceiptResponse">
+    <part name="parameters" element="tns:getNextOfficialReceiptResponse" />
+  </message>
+  <message name="insertCustAccount">
+    <part name="parameters" element="tns:insertCustAccount" />
+  </message>
+  <message name="insertCustAccountResponse">
+    <part name="parameters" element="tns:insertCustAccountResponse" />
+  </message>
+  <message name="insertCustUser">
+    <part name="parameters" element="tns:insertCustUser" />
+  </message>
+  <message name="insertCustUserResponse">
+    <part name="parameters" element="tns:insertCustUserResponse" />
+  </message>
+  <message name="insertOfficialReceipt">
+    <part name="parameters" element="tns:insertOfficialReceipt" />
+  </message>
+  <message name="insertOfficialReceiptResponse">
+    <part name="parameters" element="tns:insertOfficialReceiptResponse" />
+  </message>
+  <message name="getUserPermissionList">
+    <part name="parameters" element="tns:getUserPermissionList" />
+  </message>
+  <message name="getUserPermissionListResponse">
+    <part name="parameters" element="tns:getUserPermissionListResponse" />
+  </message>
+  <message name="insertAuditTrail">
+    <part name="parameters" element="tns:insertAuditTrail" />
+  </message>
+  <message name="insertAuditTrailResponse">
+    <part name="parameters" element="tns:insertAuditTrailResponse" />
+  </message>
+  <message name="getServerTime">
+    <part name="parameters" element="tns:getServerTime" />
+  </message>
+  <message name="getServerTimeResponse">
+    <part name="parameters" element="tns:getServerTimeResponse" />
+  </message>
+  <message name="getPOSTransactionList">
+    <part name="parameters" element="tns:getPOSTransactionList" />
+  </message>
+  <message name="getPOSTransactionListResponse">
+    <part name="parameters" element="tns:getPOSTransactionListResponse" />
+  </message>
+  <message name="insertTransactionQueue">
+    <part name="parameters" element="tns:insertTransactionQueue" />
+  </message>
+  <message name="insertTransactionQueueResponse">
+    <part name="parameters" element="tns:insertTransactionQueueResponse" />
+  </message>
+  <message name="insertTransactionQueue1">
+    <part name="parameters" element="tns:insertTransactionQueue1" />
+  </message>
+  <message name="insertTransactionQueue1Response">
+    <part name="parameters" element="tns:insertTransactionQueue1Response" />
+  </message>
+  <portType name="EMPThickClient">
+    <operation name="getAuthenticate">
+      <input message="tns:getAuthenticate" />
+      <output message="tns:getAuthenticateResponse" />
+    </operation>
+    <operation name="getNextBranch">
+      <input message="tns:getNextBranch" />
+      <output message="tns:getNextBranchResponse" />
+    </operation>
+    <operation name="getNextUser">
+      <input message="tns:getNextUser" />
+      <output message="tns:getNextUserResponse" />
+    </operation>
+    <operation name="getNextItem">
+      <input message="tns:getNextItem" />
+      <output message="tns:getNextItemResponse" />
+    </operation>
+    <operation name="getNextStock">
+      <input message="tns:getNextStock" />
+      <output message="tns:getNextStockResponse" />
+    </operation>
+    <operation name="getNextCashAccount">
+      <input message="tns:getNextCashAccount" />
+      <output message="tns:getNextCashAccountResponse" />
+    </operation>
+    <operation name="getNextCustAccount">
+      <input message="tns:getNextCustAccount" />
+      <output message="tns:getNextCustAccountResponse" />
+    </operation>
+    <operation name="getNextCustUser">
+      <input message="tns:getNextCustUser" />
+      <output message="tns:getNextCustUserResponse" />
+    </operation>
+    <operation name="getNextSuppAccount">
+      <input message="tns:getNextSuppAccount" />
+      <output message="tns:getNextSuppAccountResponse" />
+    </operation>
+    <operation name="insertNextTransaction">
+      <input message="tns:insertNextTransaction" />
+      <output message="tns:insertNextTransactionResponse" />
+    </operation>
+    <operation name="getNextCategoryTree">
+      <input message="tns:getNextCategoryTree" />
+      <output message="tns:getNextCategoryTreeResponse" />
+    </operation>
+    <operation name="getNextCardPaymentConfig">
+      <input message="tns:getNextCardPaymentConfig" />
+      <output message="tns:getNextCardPaymentConfigResponse" />
+    </operation>
+    <operation name="getNextTaxConfig">
+      <input message="tns:getNextTaxConfig" />
+      <output message="tns:getNextTaxConfigResponse" />
+    </operation>
+    <operation name="getNextSerialNumberDelta">
+      <input message="tns:getNextSerialNumberDelta" />
+      <output message="tns:getNextSerialNumberDeltaResponse" />
+    </operation>
+    <operation name="getNextOfficialReceipt">
+      <input message="tns:getNextOfficialReceipt" />
+      <output message="tns:getNextOfficialReceiptResponse" />
+    </operation>
+    <operation name="insertCustAccount">
+      <input message="tns:insertCustAccount" />
+      <output message="tns:insertCustAccountResponse" />
+    </operation>
+    <operation name="insertCustUser">
+      <input message="tns:insertCustUser" />
+      <output message="tns:insertCustUserResponse" />
+    </operation>
+    <operation name="insertOfficialReceipt">
+      <input message="tns:insertOfficialReceipt" />
+      <output message="tns:insertOfficialReceiptResponse" />
+    </operation>
+    <operation name="getUserPermissionList">
+      <input message="tns:getUserPermissionList" />
+      <output message="tns:getUserPermissionListResponse" />
+    </operation>
+    <operation name="insertAuditTrail">
+      <input message="tns:insertAuditTrail" />
+      <output message="tns:insertAuditTrailResponse" />
+    </operation>
+    <operation name="getServerTime">
+      <input message="tns:getServerTime" />
+      <output message="tns:getServerTimeResponse" />
+    </operation>
+    <operation name="getPOSTransactionList">
+      <input message="tns:getPOSTransactionList" />
+      <output message="tns:getPOSTransactionListResponse" />
+    </operation>
+    <operation name="insertTransactionQueue">
+      <input message="tns:insertTransactionQueue" />
+      <output message="tns:insertTransactionQueueResponse" />
+    </operation>
+    <operation name="insertTransactionQueue1">
+      <input message="tns:insertTransactionQueue1" />
+      <output message="tns:insertTransactionQueue1Response" />
+    </operation>
+  </portType>
+  <binding name="EMPThickClientPortBinding" type="tns:EMPThickClient">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getAuthenticate">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextBranch">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextItem">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextStock">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextCashAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextCustAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextCustUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextSuppAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertNextTransaction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextCategoryTree">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextCardPaymentConfig">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextTaxConfig">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextSerialNumberDelta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNextOfficialReceipt">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertCustAccount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertCustUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertOfficialReceipt">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getUserPermissionList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertAuditTrail">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getServerTime">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPOSTransactionList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertTransactionQueue">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertTransactionQueue1">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EMPThickClientService">
+    <port name="EMPThickClientPort" binding="tns:EMPThickClientPortBinding">
+      <soap:address location="http://192.168.0.77:8080/ws/EMPThickClientService" />
+    </port>
+  </service>
+</definitions>

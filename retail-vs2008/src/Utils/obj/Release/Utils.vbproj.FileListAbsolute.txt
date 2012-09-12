@@ -1,0 +1,8 @@
+D:\GitHub\Wavelet\jimmy-pos\retail\src\bin\Utils.dll
+D:\GitHub\Wavelet\jimmy-pos\retail\src\bin\Utils.pdb
+D:\GitHub\Wavelet\jimmy-pos\retail\src\Utils\obj\Release\ResolveAssemblyReference.cache
+D:\GitHub\Wavelet\jimmy-pos\retail\src\Utils\obj\Release\Utils.Resources.resources
+D:\GitHub\Wavelet\jimmy-pos\retail\src\Utils\obj\Release\ResGen.read.1.tlog
+D:\GitHub\Wavelet\jimmy-pos\retail\src\Utils\obj\Release\ResGen.write.1.tlog
+D:\GitHub\Wavelet\jimmy-pos\retail\src\Utils\obj\Release\Utils.dll
+D:\GitHub\Wavelet\jimmy-pos\retail\src\Utils\obj\Release\Utils.pdb

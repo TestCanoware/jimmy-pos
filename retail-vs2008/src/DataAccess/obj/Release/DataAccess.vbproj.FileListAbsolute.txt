@@ -1,0 +1,8 @@
+D:\GitHub\Wavelet\jimmy-pos\retail\src\DataAccess\obj\Release\ResolveAssemblyReference.cache
+D:\GitHub\Wavelet\jimmy-pos\retail\src\DataAccess\obj\Release\ResGen.read.1.tlog
+D:\GitHub\Wavelet\jimmy-pos\retail\src\DataAccess\obj\Release\ResGen.write.1.tlog
+D:\GitHub\Wavelet\jimmy-pos\retail\src\bin\DataAccess.dll
+D:\GitHub\Wavelet\jimmy-pos\retail\src\bin\DataAccess.pdb
+D:\GitHub\Wavelet\jimmy-pos\retail\src\DataAccess\obj\Release\DataAccess.Resources.resources
+D:\GitHub\Wavelet\jimmy-pos\retail\src\DataAccess\obj\Release\DataAccess.dll
+D:\GitHub\Wavelet\jimmy-pos\retail\src\DataAccess\obj\Release\DataAccess.pdb

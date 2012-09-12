@@ -1,0 +1,4 @@
+D:\GitHub\Wavelet\jimmy-pos\retail\src\ThickClient\obj\Release\ResolveAssemblyReference.cache
+D:\GitHub\Wavelet\jimmy-pos\retail\src\ThickClient\obj\Release\ThickClient.g.resources
+D:\GitHub\Wavelet\jimmy-pos\retail\src\ThickClient\obj\Release\ResGen.read.1.tlog
+D:\GitHub\Wavelet\jimmy-pos\retail\src\ThickClient\obj\Release\ResGen.write.1.tlog
