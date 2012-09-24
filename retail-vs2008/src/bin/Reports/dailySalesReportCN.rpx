@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="3556.8" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="ReportHeader" Name="ReportHeader1" Height="3314" BackColor="16777215">
+      <Control Type="AR.Subreport" Name="srptHeader" Left="0" Top="0" Width="3510" Height="360" ReportName="SubReport1" />
+      <Control Type="AR.Field" Name="txtReportName" Left="0" Top="450" Width="3510" Height="270" Text="每日销售报表" Style="ddo-char-set: 0; text-align: left; font-weight: bold; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtUser" Left="0" Top="1620" Width="3510" Height="270" Text="txtUser" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtTime" Left="0" Top="1350" Width="3510" Height="270" Text="txtTime" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtDate" Left="1080" Top="720" Width="2430" Height="270" Text="txtDate" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Subreport" Name="srptCollection" Left="0" Top="1980" Width="3513.6" Height="360" ReportName="SubReport1" />
+      <Control Type="AR.Label" Name="Label1" Left="0" Top="720" Width="1080" Height="270" Caption="日期范围 :" Style="ddo-char-set: 0; font-size: 8.25pt; " />
+      <Control Type="AR.Label" Name="Label2" Left="0" Top="990" Width="1080" Height="270" Caption="分店编号 :" Style="ddo-char-set: 0; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="txtBranch" Left="1080" Top="990" Width="2430" Height="270" Text="txtBranch" Style="ddo-char-set: 0; text-align: left; font-size: 8.25pt; " />
+      <Control Type="AR.Field" Name="TextBox1" Visible="0" Left="0" Top="2970" Width="3510" Height="270" Text="卡付款明细:" Style="text-decoration: none; ddo-char-set: 0; text-align: left; font-weight: bold; font-size: 12pt; " />
+      <Control Type="AR.Line" Name="Line1" X1="0" Y1="2880" X2="3510" Y2="2880" />
+      <Control Type="AR.Subreport" Name="srptCollectionDeposit" Left="0" Top="2430" Width="3513.6" Height="360" ReportName="SubReport1" />
+    </Section>
+    <Section Type="PageHeader" Name="PageHeader1" Height="0" BackColor="16777215" />
+    <Section Type="Detail" Name="Detail1" Visible="0" Height="540" BackColor="16777215">
+      <Control Type="AR.Field" Name="txtInvoiceNo" Left="0" Top="0" Width="1260" Height="270" Text="" Style="ddo-char-set: 0; font-size: 10pt; " />
+      <Control Type="AR.Field" Name="txtAmt" Left="2070" Top="0" Width="1440" Height="270" Text="" OutputFormat="#,##0.00" Style="ddo-char-set: 0; text-align: right; font-size: 10pt; " />
+      <Control Type="AR.Field" Name="txtCardDetails" Left="0" Top="270" Width="3510" Height="270" Text="" Style="ddo-char-set: 0; font-size: 10pt; " />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter1" Height="0" BackColor="16777215" />
+    <Section Type="ReportFooter" Name="ReportFooter1" Height="1980" BackColor="16777215">
+      <Control Type="AR.Field" Name="TextBox24" Left="0" Top="1710" Width="2880" Height="270" Text="现金抽屉进账总额" Style="ddo-char-set: 1; text-align: left; font-weight: bold; font-size: 10pt; " />
+      <Control Type="AR.Field" Name="txtTotalDrawer" Left="2520" Top="1710" Width="990" Height="270" Text="0.00" Style="ddo-char-set: 1; text-align: right; font-weight: bold; font-size: 10pt; " />
+      <Control Type="AR.Line" Name="Line4" X1="0" Y1="540" X2="3510" Y2="540" />
+      <Control Type="AR.Field" Name="TextBox15" Left="0" Top="630" Width="1530" Height="270" Text="现金销售" Style="ddo-char-set: 0; text-align: left; font-size: 9.75pt; " />
+      <Control Type="AR.Field" Name="txtAmtCashSales" Left="2520" Top="630" Width="990" Height="270" Text="0.00" Style="ddo-char-set: 0; text-align: right; font-size: 9.75pt; " />
+      <Control Type="AR.Field" Name="txtAmtCashIn" Left="2520" Top="900" Width="990" Height="270" Text="0.00" Style="ddo-char-set: 0; text-align: right; font-size: 9.75pt; " />
+      <Control Type="AR.Field" Name="TextBox18" Left="0" Top="900" Width="1530" Height="270" Text="现金入柜" Style="ddo-char-set: 0; text-align: left; font-size: 9.75pt; " />
+      <Control Type="AR.Field" Name="TextBox21" Left="0" Top="1170" Width="1530" Height="270" Text="现金出柜" Style="ddo-char-set: 0; text-align: left; font-size: 9.75pt; " />
+      <Control Type="AR.Field" Name="txtAmtCashOut" Left="2520" Top="1170" Width="990" Height="270" Text="0.00" Style="ddo-char-set: 0; text-align: right; font-size: 9.75pt; " />
+      <Control Type="AR.Line" Name="Line2" X1="0" Y1="0" X2="3510" Y2="0" />
+      <Control Type="AR.Subreport" Name="srptSummary" Left="0" Top="90" Width="3513.6" Height="360" ReportName="SubReport1" />
+      <Control Type="AR.Field" Name="txtAmtDeposit" Left="2520" Top="1440" Width="990" Height="270" Text="0.00" Style="ddo-char-set: 0; text-align: right; font-size: 9.75pt; " />
+      <Control Type="AR.Field" Name="TextBox4" Left="0" Top="1440" Width="1530" Height="270" Text="预存金额" Style="ddo-char-set: 0; text-align: left; font-size: 9.75pt; " />
+    </Section>
+  </Sections>
+  <ReportComponentTray />
+  <PageSettings LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" />
+  <Parameters />
+</ActiveReportsLayout>
