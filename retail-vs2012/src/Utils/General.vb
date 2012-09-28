@@ -96,6 +96,7 @@ Public NotInheritable Class General
 
             'WriteEntry is overloaded; this is one
             'of 10 ways to call it
+            ' #6462 Update latest chinese translation to VS-2012 source code
             objEventLog.WriteEntry(Entry, EventType)
             Return True
         Catch Ex As Exception
