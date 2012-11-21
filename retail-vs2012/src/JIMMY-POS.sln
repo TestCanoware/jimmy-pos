@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataAccess", "DataAccess\DataAccess.vbproj", "{DB9EB639-2B8E-4A94-BC35-A215A2618047}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Utils", "Utils\Utils.vbproj", "{CA5F4403-66EB-4D29-A65B-C2827337621F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "JIMMY-POS", "JIMMY-POS\JIMMY-POS.vbproj", "{8348699A-F0C2-4409-828F-2370DDAD0CFD}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "JimmyPosSetup", "JimmyPosSetup\JimmyPosSetup.isproj", "{D87B961A-0C1C-441C-B25F-643DB3B96314}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA5F4403-66EB-4D29-A65B-C2827337621F} = {CA5F4403-66EB-4D29-A65B-C2827337621F}
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047} = {DB9EB639-2B8E-4A94-BC35-A215A2618047}
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD} = {8348699A-F0C2-4409-828F-2370DDAD0CFD}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.CD_ROM|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.CD_ROM|Any CPU.Build.0 = Debug|Any CPU
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.SingleImage|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB9EB639-2B8E-4A94-BC35-A215A2618047}.SingleImage|Any CPU.Build.0 = Debug|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.CD_ROM|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.CD_ROM|Any CPU.Build.0 = Debug|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.SingleImage|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5F4403-66EB-4D29-A65B-C2827337621F}.SingleImage|Any CPU.Build.0 = Debug|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{8348699A-F0C2-4409-828F-2370DDAD0CFD}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.Debug|Any CPU.ActiveCfg = SingleImage
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.Debug|Any CPU.Build.0 = SingleImage
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.DVD-5|Any CPU.Build.0 = DVD-5
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.Release|Any CPU.ActiveCfg = SingleImage
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.Release|Any CPU.Build.0 = SingleImage
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{D87B961A-0C1C-441C-B25F-643DB3B96314}.SingleImage|Any CPU.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+		Svn-Managed = True
+	EndGlobalSection
+EndGlobal
